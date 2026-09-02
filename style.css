@@ -328,13 +328,14 @@ body {
 
 .main-invitation {
     display: none;
+    width: 100%;
     min-height: 100vh;
-    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 55%, #edf2f7 100% );
+    background: var(--background);
     color: var(--navy);
     text-align: center;
-    padding: 100px 20px;
+    padding: 0;
+    overflow: hidden;
 }
-
 
 /* ========================================
    INTRO SECTION
@@ -343,6 +344,7 @@ body {
 .invitation-intro {
     max-width: 650px;
     margin: auto;
+    padding: 100px 20px 80px;
 }
 
 
@@ -951,13 +953,53 @@ body {
 ======================================== */
 
 .closing-section {
-    min-height: 100vh;
-    padding: 120px 20px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    min-height: auto;
+    padding: 120px 20px 80px;
     text-align: center;
-    background: radial-gradient( circle at center, #ffffff 0%, #f4f7fa 55%, #e8eff5 100% );
+    background: radial-gradient(
+        circle at center,
+        #ffffff 0%,
+        #f7f9fc 60%,
+        #edf2f7 100%
+    );
+    overflow: hidden;
+}
+
+
+/* Decorative subtle ornament */
+
+.closing-section::before,
+.closing-section::after {
+    position: absolute;
+    font-family: serif;
+    font-size: 220px;
+    color: rgba(143, 169, 194, 0.05);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.closing-section::before {
+    content: "❧";
+    top: -80px;
+    left: -40px;
+    transform: rotate(25deg);
+}
+
+
+.closing-section::after {
+    content: "❧";
+    bottom: -100px;
+    right: -50px;
+    transform: rotate(205deg);
+}
+
+
+.closing-content,
+.closing-footer {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -1012,10 +1054,10 @@ body {
 }
 
 
-    .closing-names span {
-        color: var(--gold);
-        margin: 0 8px;
-    }
+.closing-names span {
+    color: var(--gold);
+    margin: 0 8px;
+}
 
 
 /* DATE */
@@ -1028,9 +1070,7 @@ body {
 }
 
 
-/* ========================================
-   FOOTER
-======================================== */
+/* FOOTER */
 
 .closing-footer {
     margin-top: 80px;
