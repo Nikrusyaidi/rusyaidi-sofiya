@@ -470,7 +470,45 @@ body {
     background: linear-gradient( 180deg, #eaf1f7 0%, #f7f9fc 50%, #eaf1f7 100% );
     position: relative;
 }
+/* ========================================
+   WEDDING DETAILS DECORATION
+======================================== */
 
+.detail-decoration {
+    position: absolute;
+    font-family: serif;
+    font-size: 260px;
+    color: rgba(143, 169, 194, 0.08);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+
+/* TOP LEFT DECORATION */
+
+.decoration-top-left {
+    top: -80px;
+    left: -40px;
+    transform: rotate(25deg);
+}
+
+
+/* BOTTOM RIGHT DECORATION */
+
+.decoration-bottom-right {
+    bottom: -100px;
+    right: -40px;
+    transform: rotate(205deg);
+}
+
+
+/* Keep content above decoration */
+
+.wedding-details > *:not(.detail-decoration) {
+    position: relative;
+    z-index: 1;
+}
 
 /* SECTION ORNAMENT */
 
