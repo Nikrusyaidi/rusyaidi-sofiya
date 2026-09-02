@@ -1,4 +1,4 @@
-﻿const openButton = document.getElementById("openInvitation");
+const openButton = document.getElementById("openInvitation");
 
 const welcomeScreen = document.querySelector(".welcome-screen");
 
