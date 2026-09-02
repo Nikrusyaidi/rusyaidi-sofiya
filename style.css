@@ -32,6 +32,49 @@ body {
     color: var(--navy);
 }
 
+/* ========================================
+   SUBTLE BACKGROUND PATTERN
+======================================== */
+
+.pattern-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .pattern-section::before,
+    .pattern-section::after {
+        content: "❧";
+        position: absolute;
+        font-family: serif;
+        font-size: 240px;
+        color: rgba(143, 169, 194, 0.045);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+    }
+
+
+    .pattern-section::before {
+        top: -80px;
+        left: -50px;
+        transform: rotate(25deg);
+    }
+
+
+    .pattern-section::after {
+        bottom: -100px;
+        right: -50px;
+        transform: rotate(205deg);
+    }
+
+
+    /* Keep actual content above pattern */
+
+    .pattern-section > * {
+        position: relative;
+        z-index: 1;
+    }
 
 /* ========================================
    WELCOME SCREEN
@@ -721,7 +764,7 @@ body {
 }
 
 
-/* ATTEND BUTTON */
+    /* ATTEND BUTTON */
 
     .rsvp-button:hover {
         background: var(--navy);
@@ -957,43 +1000,38 @@ body {
     min-height: auto;
     padding: 120px 20px 80px;
     text-align: center;
-    background: radial-gradient(
-        circle at center,
-        #ffffff 0%,
-        #f7f9fc 60%,
-        #edf2f7 100%
-    );
+    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 60%, #edf2f7 100% );
     overflow: hidden;
 }
 
 
-/* Decorative subtle ornament */
+    /* Decorative subtle ornament */
 
-.closing-section::before,
-.closing-section::after {
-    position: absolute;
-    font-family: serif;
-    font-size: 220px;
-    color: rgba(143, 169, 194, 0.05);
-    pointer-events: none;
-    z-index: 0;
-}
-
-
-.closing-section::before {
-    content: "❧";
-    top: -80px;
-    left: -40px;
-    transform: rotate(25deg);
-}
+    .closing-section::before,
+    .closing-section::after {
+        position: absolute;
+        font-family: serif;
+        font-size: 220px;
+        color: rgba(143, 169, 194, 0.05);
+        pointer-events: none;
+        z-index: 0;
+    }
 
 
-.closing-section::after {
-    content: "❧";
-    bottom: -100px;
-    right: -50px;
-    transform: rotate(205deg);
-}
+    .closing-section::before {
+        content: "❧";
+        top: -80px;
+        left: -40px;
+        transform: rotate(25deg);
+    }
+
+
+    .closing-section::after {
+        content: "❧";
+        bottom: -100px;
+        right: -50px;
+        transform: rotate(205deg);
+    }
 
 
 .closing-content,
@@ -1054,10 +1092,10 @@ body {
 }
 
 
-.closing-names span {
-    color: var(--gold);
-    margin: 0 8px;
-}
+    .closing-names span {
+        color: var(--gold);
+        margin: 0 8px;
+    }
 
 
 /* DATE */
@@ -1092,12 +1130,386 @@ body {
 }
 
 /* ========================================
+   SUBTLE ISLAMIC GEOMETRIC PATTERN
+======================================== */
+
+.pattern-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    /* TOP RIGHT PATTERN */
+
+    .pattern-section::before {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        top: -120px;
+        right: -120px;
+        background: linear-gradient( 45deg, transparent 46%, rgba(31, 58, 95, 0.07) 47%, rgba(31, 58, 95, 0.07) 53%, transparent 54% ), linear-gradient( -45deg, transparent 46%, rgba(31, 58, 95, 0.07) 47%, rgba(31, 58, 95, 0.07) 53%, transparent 54% );
+        background-size: 42px 42px;
+        transform: rotate(15deg);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+
+    /* BOTTOM LEFT PATTERN */
+
+    .pattern-section::after {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        bottom: -120px;
+        left: -120px;
+        background: linear-gradient( 45deg, transparent 46%, rgba(181, 162, 123, 0.08) 47%, rgba(181, 162, 123, 0.08) 53%, transparent 54% ), linear-gradient( -45deg, transparent 46%, rgba(181, 162, 123, 0.08) 47%, rgba(181, 162, 123, 0.08) 53%, transparent 54% );
+        background-size: 42px 42px;
+        transform: rotate(-15deg);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+
+    /* KEEP CONTENT ABOVE PATTERN */
+
+    .pattern-section > * {
+        position: relative;
+        z-index: 1;
+    }
+
+/* ========================================
+   INTRO - GEOMETRIC PATTERN
+======================================== */
+
+.intro-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .intro-pattern::before,
+    .intro-pattern::after {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        background: linear-gradient( 45deg, transparent 46%, rgba(31, 58, 95, 0.06) 47%, rgba(31, 58, 95, 0.06) 53%, transparent 54% ), linear-gradient( -45deg, transparent 46%, rgba(31, 58, 95, 0.06) 47%, rgba(31, 58, 95, 0.06) 53%, transparent 54% );
+        background-size: 38px 38px;
+        pointer-events: none;
+    }
+
+
+    /* LEFT */
+
+    .intro-pattern::before {
+        top: 50%;
+        left: -150px;
+        transform: translateY(-50%) rotate(15deg);
+    }
+
+
+    /* RIGHT */
+
+    .intro-pattern::after {
+        top: 50%;
+        right: -150px;
+        transform: translateY(-50%) rotate(-15deg);
+    }
+
+/* ========================================
+   LEAF PATTERN
+======================================== */
+
+.leaf-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .leaf-pattern::before,
+    .leaf-pattern::after {
+        content: "❧";
+        position: absolute;
+        font-family: serif;
+        font-size: 240px;
+        color: rgba(143, 169, 194, 0.06);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+    }
+
+
+    /* TOP LEFT LEAF */
+
+    .leaf-pattern::before {
+        top: -70px;
+        left: -45px;
+        transform: rotate(25deg);
+    }
+
+
+    /* BOTTOM RIGHT LEAF */
+
+    .leaf-pattern::after {
+        bottom: -100px;
+        right: -45px;
+        transform: rotate(205deg);
+    }
+
+
+    /* Keep content above */
+
+    .leaf-pattern > * {
+        position: relative;
+        z-index: 1;
+    }
+
+/* ========================================
+   BACKGROUND PATTERN SYSTEM
+======================================== */
+
+
+/* ========================================
+   WALIMATULURUS
+   GEOMETRIC PATTERN LEFT & RIGHT
+======================================== */
+
+.intro-pattern {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 20px;
+}
+
+
+    .intro-pattern::before,
+    .intro-pattern::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 320px;
+        top: 50%;
+        background: linear-gradient( 45deg, transparent 46%, rgba(31, 58, 95, 0.055) 47%, rgba(31, 58, 95, 0.055) 53%, transparent 54% ), linear-gradient( -45deg, transparent 46%, rgba(31, 58, 95, 0.055) 47%, rgba(31, 58, 95, 0.055) 53%, transparent 54% );
+        background-size: 42px 42px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+
+    /* LEFT */
+
+    .intro-pattern::before {
+        left: -170px;
+        transform: translateY(-50%) rotate(15deg);
+    }
+
+
+    /* RIGHT */
+
+    .intro-pattern::after {
+        right: -170px;
+        transform: translateY(-50%) rotate(-15deg);
+    }
+
+
+    /* KEEP INTRO CONTENT ABOVE */
+
+    .intro-pattern > * {
+        position: relative;
+        z-index: 1;
+    }
+
+
+/* ========================================
+   MAJLIS PERKAHWINAN
+   LEAF PATTERN
+======================================== */
+
+.leaf-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .leaf-pattern::before,
+    .leaf-pattern::after {
+        content: "❧";
+        position: absolute;
+        font-family: serif;
+        font-size: 260px;
+        font-weight: normal;
+        color: rgba(120, 149, 178, 0.075);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+    }
+
+
+    /* TOP LEFT */
+
+    .leaf-pattern::before {
+        top: -70px;
+        left: -50px;
+        transform: rotate(25deg);
+    }
+
+
+    /* BOTTOM RIGHT */
+
+    .leaf-pattern::after {
+        bottom: -90px;
+        right: -50px;
+        transform: rotate(205deg);
+    }
+
+
+    /* KEEP MAJLIS CONTENT ABOVE */
+
+    .leaf-pattern > * {
+        position: relative;
+        z-index: 1;
+    }
+
+
+/* ========================================
+   RSVP
+   GEOMETRIC PATTERN LEFT & RIGHT
+======================================== */
+
+.pattern-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .pattern-section::before,
+    .pattern-section::after {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 320px;
+        top: 50%;
+        background: linear-gradient( 45deg, transparent 46%, rgba(31, 58, 95, 0.055) 47%, rgba(31, 58, 95, 0.055) 53%, transparent 54% ), linear-gradient( -45deg, transparent 46%, rgba(181, 162, 123, 0.06) 47%, rgba(181, 162, 123, 0.06) 53%, transparent 54% );
+        background-size: 42px 42px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+
+    /* LEFT */
+
+    .pattern-section::before {
+        left: -170px;
+        transform: translateY(-50%) rotate(15deg);
+    }
+
+
+    /* RIGHT */
+
+    .pattern-section::after {
+        right: -170px;
+        transform: translateY(-50%) rotate(-15deg);
+    }
+
+
+    /* KEEP RSVP CONTENT ABOVE */
+
+    .pattern-section > * {
+        position: relative;
+        z-index: 1;
+    }
+
+
+/* ========================================
+   CLOSING SECTION
+   SUBTLE LEAF PATTERN
+======================================== */
+
+.closing-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+
+    .closing-pattern::before,
+    .closing-pattern::after {
+        content: "❧";
+        position: absolute;
+        font-family: serif;
+        font-size: 250px;
+        color: rgba(120, 149, 178, 0.055);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+    }
+
+
+    /* TOP RIGHT */
+
+    .closing-pattern::before {
+        top: -80px;
+        right: -50px;
+        transform: rotate(35deg);
+    }
+
+
+    /* BOTTOM LEFT */
+
+    .closing-pattern::after {
+        bottom: -100px;
+        left: -50px;
+        transform: rotate(210deg);
+    }
+
+
+    /* KEEP CLOSING CONTENT ABOVE */
+
+    .closing-pattern > * {
+        position: relative;
+        z-index: 1;
+    }
+
+/* ========================================
    MOBILE
 ======================================== */
 
 @media (max-width: 600px) {
 
+    .intro-pattern::before,
+    .intro-pattern::after,
+    .pattern-section::before,
+    .pattern-section::after {
+        width: 180px;
+        height: 220px;
+        background-size: 30px 30px;
+    }
 
+
+    .intro-pattern::before,
+    .pattern-section::before {
+        left: -120px;
+    }
+
+
+    .intro-pattern::after,
+    .pattern-section::after {
+        right: -120px;
+    }
+
+
+    .leaf-pattern::before,
+    .leaf-pattern::after {
+        font-size: 170px;
+    }
+    .pattern-section::before,
+    .pattern-section::after {
+        width: 220px;
+        height: 220px;
+        background-size: 32px 32px;
+        opacity: 0.7;
+    }
     .welcome-screen {
         padding: 40px 15px;
     }
@@ -1272,6 +1684,7 @@ body {
     gap: 8px;
     text-align: center;
 }
+
 }
 
 
@@ -1310,4 +1723,44 @@ body {
     height: 45px;
     bottom: 20px;
     right: 20px;
+}
+
+/* BACKGROUND PATTERN MOBILE */
+
+.intro-pattern {
+    padding: 100px 15px;
+}
+
+
+    .intro-pattern::before,
+    .intro-pattern::after,
+    .pattern-section::before,
+    .pattern-section::after {
+        width: 180px;
+        height: 240px;
+        background-size: 30px 30px;
+    }
+
+
+    .intro-pattern::before,
+    .pattern-section::before {
+        left: -125px;
+    }
+
+
+    .intro-pattern::after,
+    .pattern-section::after {
+        right: -125px;
+    }
+
+
+.leaf-pattern::before,
+.leaf-pattern::after {
+    font-size: 180px;
+}
+
+
+.closing-pattern::before,
+.closing-pattern::after {
+    font-size: 180px;
 }
