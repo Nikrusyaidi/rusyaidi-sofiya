@@ -1,0 +1,1233 @@
+/* ========================================
+   GOOGLE FONT & BASIC RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   COLOUR VARIABLES
+======================================== */
+
+:root {
+    --navy: #1f3a5f;
+    --soft-blue: #8fa9c2;
+    --light-blue: #e8f0f7;
+    --gold: #b5a27b;
+    --background: #f7f9fb;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background);
+    color: var(--navy);
+}
+
+
+/* ========================================
+   WELCOME SCREEN
+======================================== */
+
+.welcome-screen {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden;
+    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 45%, #edf2f7 100% );
+}
+
+
+/* ========================================
+   DECORATIVE CORNERS
+======================================== */
+
+.corner {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    pointer-events: none;
+    opacity: 0.18;
+}
+
+
+/* TOP LEFT */
+
+.corner-top-left {
+    top: 0;
+    left: 0;
+    border-right: 1px solid rgba(31, 58, 95, 0.25);
+    border-bottom: 1px solid rgba(31, 58, 95, 0.25);
+    border-radius: 0 0 120px 0;
+}
+
+
+/* BOTTOM RIGHT */
+
+.corner-bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: 1px solid rgba(31, 58, 95, 0.25);
+    border-top: 1px solid rgba(31, 58, 95, 0.25);
+    border-radius: 120px 0 0 0;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* ========================================
+   BISMIILLAH
+======================================== */
+
+.bismillah {
+    font-family: serif;
+    font-size: 25px;
+    margin-bottom: 45px;
+    color: var(--navy);
+}
+
+
+/* ========================================
+   ORNAMENT DIVIDER
+======================================== */
+
+.top-divider,
+.bottom-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px auto;
+    color: var(--soft-blue);
+}
+
+
+    .top-divider::before,
+    .top-divider::after,
+    .bottom-divider::before,
+    .bottom-divider::after {
+        content: "";
+        width: 90px;
+        height: 1px;
+        background: var(--soft-blue);
+    }
+
+
+/* ========================================
+   WEDDING TITLE
+======================================== */
+
+.wedding-title {
+    font-size: 11px;
+    letter-spacing: 6px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-top: 45px;
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   NAMES
+======================================== */
+
+.groom-name,
+.bride-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(65px, 10vw, 105px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: 4px;
+    color: var(--navy);
+}
+
+
+/* ========================================
+   AMPERSAND
+======================================== */
+
+.ampersand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    margin: 20px 0;
+    color: var(--gold);
+}
+
+
+/* ========================================
+   DATE DIVIDER
+======================================== */
+
+.divider {
+    width: 320px;
+    max-width: 70%;
+    height: 1px;
+    background: var(--soft-blue);
+    margin: 45px auto 30px;
+}
+
+
+/* ========================================
+   DATE
+======================================== */
+
+.wedding-date {
+    font-size: 14px;
+    letter-spacing: 7px;
+    color: var(--navy);
+    margin-bottom: 40px;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.open-button {
+    padding: 18px 45px;
+    border: 1px solid var(--navy);
+    background: rgba(255, 255, 255, 0.25);
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    border-radius: 2px;
+}
+
+
+    .open-button:hover {
+        background: var(--navy);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+/* ========================================
+   MUSIC BUTTON
+======================================== */
+
+.music-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 58, 95, 0.3);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--navy);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(31, 58, 95, 0.12);
+    transition: all 0.3s ease;
+}
+
+
+    /* SHOW MUSIC BUTTON */
+
+    .music-button.show {
+        display: flex;
+    }
+
+
+    /* HOVER */
+
+    .music-button:hover {
+        transform: scale(1.08);
+        background: var(--navy);
+        color: white;
+    }
+
+
+/* MUSIC ICON */
+
+.music-icon {
+    font-size: 20px;
+}
+
+
+/* ROTATING ANIMATION WHEN MUSIC PLAYING */
+
+.music-button.playing {
+    animation: musicPulse 2s infinite linear;
+}
+
+
+@keyframes musicPulse {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   DECORATIVE LEAVES
+======================================== */
+
+.leaves {
+    position: absolute;
+    font-size: 180px;
+    color: rgba(120, 149, 178, 0.18);
+    font-family: serif;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* TOP RIGHT */
+
+.leaves-top-right {
+    top: -45px;
+    right: -20px;
+    transform: rotate(25deg);
+}
+
+
+/* BOTTOM LEFT */
+
+.leaves-bottom-left {
+    bottom: -60px;
+    left: -30px;
+    transform: rotate(205deg);
+}
+
+/* ========================================
+   MAIN INVITATION
+======================================== */
+
+.main-invitation {
+    display: none;
+    min-height: 100vh;
+    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 55%, #edf2f7 100% );
+    color: var(--navy);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+
+/* ========================================
+   INTRO SECTION
+======================================== */
+
+.invitation-intro {
+    max-width: 650px;
+    margin: auto;
+}
+
+
+/* BISMILLAH */
+
+.intro-bismillah {
+    font-family: serif;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+
+/* SMALL TITLE */
+
+.intro-small-title {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--soft-blue);
+    margin-bottom: 25px;
+}
+
+
+/* WALIMATULURUS */
+
+.invitation-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 70px);
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+
+/* LINE */
+
+.intro-line {
+    width: 70px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+}
+
+
+/* DESCRIPTION */
+
+.intro-text {
+    max-width: 500px;
+    margin: 40px auto;
+    font-size: 14px;
+    line-height: 2;
+    color: #526b82;
+}
+
+
+/* FULL NAMES */
+
+.invitation-intro h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* AMPERSAND */
+
+.intro-ampersand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: var(--gold);
+    margin: 25px 0;
+}
+
+
+/* ========================================
+   PAGE TRANSITIONS
+======================================== */
+
+.welcome-screen {
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+
+    .welcome-screen.fade-out {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+/* Main invitation animation */
+
+.main-invitation {
+    opacity: 0;
+    animation: none;
+}
+
+
+    .main-invitation.show {
+        display: block;
+        animation: fadeInInvitation 1s ease forwards;
+    }
+
+
+@keyframes fadeInInvitation {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   WEDDING DETAILS
+======================================== */
+
+.wedding-details {
+    min-height: 100vh;
+    margin-top: 100px;
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient( 180deg, #eaf1f7 0%, #f7f9fc 50%, #eaf1f7 100% );
+    position: relative;
+}
+
+
+/* SECTION ORNAMENT */
+
+.section-ornament {
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+
+/* SMALL TITLE */
+
+.section-small-title {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--soft-blue);
+    margin-bottom: 20px;
+}
+
+
+/* MAIN TITLE */
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 70px);
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 25px;
+}
+
+
+/* DIVIDER */
+
+.section-line {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto 70px;
+}
+
+
+/* DETAIL ITEMS */
+
+.detail-item {
+    margin-bottom: 50px;
+}
+
+
+/* DETAIL LABEL */
+
+.detail-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: var(--soft-blue);
+    margin-bottom: 15px;
+}
+
+
+/* DETAIL VALUE */
+
+.detail-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 500;
+    color: var(--navy);
+}
+
+
+/* VENUE */
+
+.venue-item {
+    margin-top: 90px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(31, 58, 95, 0.15);
+}
+
+
+.venue-address {
+    max-width: 450px;
+    margin: 20px auto 35px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #526b82;
+}
+
+
+/* LOCATION BUTTON */
+
+.location-button {
+    display: inline-block;
+    padding: 17px 32px;
+    border: 1px solid var(--navy);
+    text-decoration: none;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+}
+
+
+    .location-button:hover {
+        background: var(--navy);
+        color: white;
+    }
+
+/* ========================================
+   COUNTDOWN
+======================================== */
+
+.countdown-section {
+    min-height: 70vh;
+    padding: 120px 20px;
+    text-align: center;
+    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 60%, #edf2f7 100% );
+}
+
+
+/* COUNTDOWN CONTAINER */
+
+.countdown-container {
+    max-width: 700px;
+    margin: 70px auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* COUNTDOWN BOX */
+
+.countdown-item {
+    width: 130px;
+    padding: 30px 15px;
+    border-top: 1px solid rgba(31, 58, 95, 0.25);
+    border-bottom: 1px solid rgba(31, 58, 95, 0.25);
+}
+
+
+    /* NUMBER */
+
+    .countdown-item span {
+        display: block;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 55px;
+        font-weight: 500;
+        color: var(--navy);
+    }
+
+
+    /* LABEL */
+
+    .countdown-item p {
+        margin-top: 12px;
+        font-size: 9px;
+        letter-spacing: 3px;
+        color: var(--soft-blue);
+    }
+
+
+/* ========================================
+   RSVP
+======================================== */
+
+.rsvp-section {
+    min-height: 80vh;
+    padding: 120px 20px;
+    text-align: center;
+    background: linear-gradient( 180deg, #f7f9fc 0%, #eaf1f7 50%, #f7f9fc 100% );
+}
+
+
+/* DESCRIPTION */
+
+.rsvp-description {
+    max-width: 500px;
+    margin: 40px auto 50px;
+    font-size: 14px;
+    line-height: 2;
+    color: #526b82;
+}
+
+
+/* BUTTON CONTAINER */
+
+.rsvp-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* RSVP BUTTON */
+
+.rsvp-button {
+    display: inline-block;
+    min-width: 230px;
+    padding: 18px 30px;
+    border: 1px solid var(--navy);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--navy);
+    transition: all 0.3s ease;
+}
+
+
+/* ATTEND BUTTON */
+
+    .rsvp-button:hover {
+        background: var(--navy);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+
+
+/* RSVP NOTE */
+
+.rsvp-note {
+    margin-top: 40px;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--soft-blue);
+}
+
+/* ========================================
+   MAKLUMAT TAMBAHAN
+======================================== */
+
+.additional-info {
+    padding: 120px 20px;
+    text-align: center;
+    background: radial-gradient( circle at center, #ffffff 0%, #f7f9fc 55%, #edf2f7 100% );
+}
+
+
+/* ========================================
+   ACCORDION
+======================================== */
+
+.info-accordion {
+    width: 100%;
+    max-width: 650px;
+    margin: 20px auto;
+    border: 1px solid rgba(31, 58, 95, 0.18);
+    background: rgba(255, 255, 255, 0.45);
+    transition: all 0.3s ease;
+}
+
+
+    .info-accordion summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+        cursor: pointer;
+        list-style: none;
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: var(--navy);
+    }
+
+
+        .info-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+/* ACCORDION ICON */
+
+.accordion-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+
+.info-accordion[open] .accordion-icon {
+    transform: rotate(45deg);
+}
+
+
+/* CONTENT */
+
+.accordion-content {
+    padding: 10px 30px 50px;
+    animation: accordionFade 0.4s ease;
+}
+
+
+@keyframes accordionFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   GIFT CONTENT
+======================================== */
+
+.gift-description {
+    max-width: 500px;
+    margin: 25px auto 35px;
+    font-size: 13px;
+    line-height: 2;
+    color: #526b82;
+}
+
+
+.gift-card {
+    max-width: 380px;
+    margin: auto;
+    padding: 30px;
+    border-top: 1px solid rgba(31, 58, 95, 0.15);
+}
+
+
+/* QR */
+
+.duitnow-qr {
+    width: 210px;
+    max-width: 100%;
+    margin-bottom: 25px;
+}
+
+
+/* BANK */
+
+.bank-name {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--soft-blue);
+    margin-bottom: 12px;
+}
+
+
+.account-holder {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+
+.account-number {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--navy);
+    margin-bottom: 25px;
+}
+
+
+/* COPY BUTTON */
+
+.copy-account {
+    padding: 13px 22px;
+    border: 1px solid var(--navy);
+    background: transparent;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+    .copy-account:hover {
+        background: var(--navy);
+        color: white;
+    }
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact-description {
+    margin: 20px auto 30px;
+    font-size: 13px;
+    line-height: 2;
+    color: #526b82;
+}
+
+
+.contact-content {
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* CONTACT CARD */
+
+.contact-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(31, 58, 95, 0.15);
+    text-decoration: none;
+    color: var(--navy);
+    transition: all 0.3s ease;
+}
+
+
+    .contact-card:hover {
+        background: rgba(31, 58, 95, 0.05);
+        transform: translateY(-2px);
+    }
+
+
+.contact-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+
+.contact-phone {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #526b82;
+}
+
+/* ========================================
+   CLOSING SECTION
+======================================== */
+
+.closing-section {
+    min-height: 100vh;
+    padding: 120px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background: radial-gradient( circle at center, #ffffff 0%, #f4f7fa 55%, #e8eff5 100% );
+}
+
+
+.closing-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+
+/* CLOSING TITLE */
+
+.closing-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 70px);
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: var(--navy);
+}
+
+
+/* MESSAGE */
+
+.closing-message {
+    max-width: 520px;
+    margin: 40px auto;
+    font-size: 14px;
+    line-height: 2;
+    color: #526b82;
+}
+
+
+/* DOA */
+
+.closing-doa {
+    max-width: 500px;
+    margin: 45px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--navy);
+}
+
+
+/* NAMES */
+
+.closing-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(45px, 7vw, 70px);
+    color: var(--navy);
+    margin-top: 50px;
+}
+
+
+    .closing-names span {
+        color: var(--gold);
+        margin: 0 8px;
+    }
+
+
+/* DATE */
+
+.closing-date {
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--soft-blue);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.closing-footer {
+    margin-top: 80px;
+}
+
+
+.footer-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+}
+
+
+.closing-footer p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--soft-blue);
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+
+    .welcome-screen {
+        padding: 40px 15px;
+    }
+
+
+    .corner {
+        width: 170px;
+        height: 170px;
+    }
+
+    .leaves {
+        font-size: 110px;
+    }
+
+    .bismillah {
+        font-size: 21px;
+        margin-bottom: 35px;
+    }
+
+
+    .wedding-title {
+        font-size: 9px;
+        letter-spacing: 4px;
+        margin-top: 35px;
+    }
+
+
+    .groom-name,
+    .bride-name {
+        font-size: clamp(58px, 16vw, 80px);
+        letter-spacing: 2px;
+    }
+
+
+    .ampersand {
+        font-size: 55px;
+    }
+
+
+    .wedding-date {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+
+    .open-button {
+        padding: 16px 30px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+}
+
+/* WEDDING DETAILS MOBILE */
+
+.wedding-details {
+    margin-top: 60px;
+    padding: 90px 20px;
+}
+
+
+.detail-item {
+    margin-bottom: 40px;
+}
+
+
+.venue-item {
+    margin-top: 70px;
+    padding-top: 50px;
+}
+
+
+.detail-label {
+    letter-spacing: 3px;
+}
+
+
+.venue-address {
+    font-size: 13px;
+}
+
+/* COUNTDOWN MOBILE */
+
+.countdown-section {
+    padding: 90px 15px;
+    min-height: auto;
+}
+
+
+.countdown-container {
+    gap: 8px;
+    margin-top: 50px;
+}
+
+
+.countdown-item {
+    width: 75px;
+    padding: 20px 5px;
+}
+
+
+    .countdown-item span {
+        font-size: 35px;
+    }
+
+
+    .countdown-item p {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+/* RSVP MOBILE */
+
+.rsvp-section {
+    padding: 90px 20px;
+    min-height: auto;
+}
+
+
+.rsvp-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.rsvp-button {
+    width: 100%;
+    max-width: 280px;
+}
+
+/* ADDITIONAL INFO MOBILE */
+
+.additional-info {
+    padding: 90px 15px;
+}
+
+
+.info-accordion summary {
+    padding: 22px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+.accordion-content {
+    padding: 5px 15px 35px;
+}
+
+
+.gift-card {
+    padding: 20px 10px;
+}
+
+
+.duitnow-qr {
+    width: 190px;
+}
+
+
+.account-holder {
+    font-size: 24px;
+}
+
+
+.account-number {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+.contact-card {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+}
+
+
+/* CLOSING MOBILE */
+
+.closing-section {
+    min-height: 90vh;
+    padding: 90px 20px 40px;
+}
+
+
+.closing-message {
+    font-size: 13px;
+}
+
+
+.closing-doa {
+    font-size: 21px;
+}
+
+
+.closing-names {
+    font-size: 50px;
+}
+
+
+.closing-date {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* MUSIC BUTTON MOBILE */
+
+.music-button {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+}
