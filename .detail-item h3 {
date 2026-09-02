@@ -495,10 +495,11 @@ body {
 
 .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(45px, 7vw, 70px);
+    font-size: clamp(48px, 7vw, 72px);
     font-weight: 500;
     color: var(--navy);
     margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
 
