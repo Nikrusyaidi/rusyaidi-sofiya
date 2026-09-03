@@ -886,6 +886,159 @@ section {
     color: var(--soft-blue);
 }
 
+/* ========================================
+   MENU BUTTON
+======================================== */
+
+.menu-button {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(22, 58, 99, 0.2);
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--navy);
+    font-size: 22px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(22, 58, 99, 0.12);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+
+    .menu-button.show {
+        display: flex;
+    }
+
+
+    .menu-button:hover {
+        transform: scale(1.08);
+        background: var(--navy);
+        color: white;
+    }
+
+
+/* ========================================
+   MENU PANEL
+======================================== */
+
+.menu-panel {
+    position: fixed;
+    left: 25px;
+    bottom: 88px;
+    width: 240px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(22, 58, 99, 0.12);
+    box-shadow: 0 15px 40px rgba(22, 58, 99, 0.15);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px) scale(0.96);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+
+    .menu-panel.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+
+/* ========================================
+   MENU HEADER
+======================================== */
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(22, 58, 99, 0.12);
+}
+
+
+    .menu-header span {
+        font-size: 9px;
+        letter-spacing: 4px;
+        color: var(--soft-blue);
+    }
+
+
+.menu-close {
+    border: none;
+    background: transparent;
+    color: var(--navy);
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MENU LINKS
+======================================== */
+
+.menu-panel a {
+    display: block;
+    padding: 13px 5px;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--deep-navy);
+    border-bottom: 1px solid rgba(22, 58, 99, 0.06);
+    transition: padding-left 0.25s ease, color 0.25s ease;
+}
+
+
+    .menu-panel a:last-child {
+        border-bottom: none;
+    }
+
+
+    .menu-panel a:hover {
+        padding-left: 10px;
+        color: var(--blue);
+    }
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+@media (max-width: 600px) {
+
+    .menu-button {
+        width: 46px;
+        height: 46px;
+        bottom: 18px;
+        left: 18px;
+        font-size: 19px;
+    }
+
+
+    .menu-panel {
+        left: 15px;
+        right: 15px;
+        bottom: 75px;
+        width: auto;
+        padding: 16px;
+    }
+
+
+        .menu-panel a {
+            font-size: 18px;
+            padding: 12px 5px;
+        }
+}
 
 /* ========================================
    MUSIC BUTTON
@@ -1011,7 +1164,7 @@ section {
 
 
     .invitation-intro {
-        padding: 75px 20px;
+        padding: 10px 10px 10px;
     }
 
 
@@ -1036,7 +1189,7 @@ section {
     .countdown-section,
     .rsvp-section,
     .additional-info {
-        padding: 70px 18px;
+        padding: 50px 18px;
     }
 
 
