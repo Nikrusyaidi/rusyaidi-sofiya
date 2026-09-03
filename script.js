@@ -16,6 +16,19 @@ const musicIcon = document.querySelector(".music-icon");
 
 
 /* ========================================
+   MENU ELEMENTS
+======================================== */
+
+const menuButton = document.getElementById("menuButton");
+
+const menuPanel = document.getElementById("menuPanel");
+
+const menuClose = document.getElementById("menuClose");
+
+const menuLinks = document.querySelectorAll(".menu-panel a");
+
+
+/* ========================================
    OPEN INVITATION
 ======================================== */
 
@@ -63,6 +76,11 @@ openButton.addEventListener("click", function () {
         musicButton.classList.add("show");
 
 
+        /* Show menu button */
+
+        menuButton.classList.add("show");
+
+
         /* Play music */
 
         backgroundMusic.play()
@@ -85,7 +103,6 @@ openButton.addEventListener("click", function () {
         /* Start animations */
 
         initialiseRevealAnimations();
-
 
         animateWords();
 
@@ -134,7 +151,74 @@ musicButton.addEventListener("click", function () {
 
 
 /* ========================================
-   COUNTDOWN
+   MENU BUTTON
+======================================== */
+
+menuButton.addEventListener("click", function () {
+
+    menuPanel.classList.toggle("open");
+
+});
+
+
+/* ========================================
+   CLOSE MENU BUTTON
+======================================== */
+
+menuClose.addEventListener("click", function () {
+
+    menuPanel.classList.remove("open");
+
+});
+
+
+/* ========================================
+   MENU LINKS
+======================================== */
+
+menuLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        menuPanel.classList.remove("open");
+
+    });
+
+});
+
+
+/* ========================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+======================================== */
+
+document.addEventListener("click", function (event) {
+
+
+    const clickedInsideMenu =
+
+        menuPanel.contains(event.target);
+
+
+    const clickedMenuButton =
+
+        menuButton.contains(event.target);
+
+
+    if (
+        !clickedInsideMenu &&
+        !clickedMenuButton
+    ) {
+
+        menuPanel.classList.remove("open");
+
+    }
+
+
+});
+
+
+/* ========================================
+   WEDDING COUNTDOWN
 ======================================== */
 
 const weddingDate = new Date(
@@ -166,7 +250,6 @@ function updateCountdown() {
 
 
         return;
-
 
     }
 
@@ -240,12 +323,12 @@ function updateCountdown() {
 }
 
 
-/* Update immediately */
+/* ========================================
+   UPDATE COUNTDOWN
+======================================== */
 
 updateCountdown();
 
-
-/* Update every second */
 
 setInterval(updateCountdown, 1000);
 
@@ -263,16 +346,22 @@ function copyAccount() {
     navigator.clipboard.writeText(accountNumber);
 
 
-    const button = document.querySelector(".copy-account");
+    const button =
+
+        document.querySelector(".copy-account");
 
 
-    button.innerText = "NOMBOR AKAUN DISALIN ✓";
+    button.innerText =
+
+        "NOMBOR AKAUN DISALIN ✓";
 
 
     setTimeout(function () {
 
 
-        button.innerText = "SALIN NOMBOR AKAUN";
+        button.innerText =
+
+            "SALIN NOMBOR AKAUN";
 
 
     }, 2000);
@@ -282,7 +371,7 @@ function copyAccount() {
 
 
 /* ========================================
-   SCROLL REVEAL ANIMATION
+   SCROLL REVEAL
 ======================================== */
 
 function initialiseRevealAnimations() {
@@ -290,48 +379,61 @@ function initialiseRevealAnimations() {
 
     const revealElements =
 
-        document.querySelectorAll(".reveal-on-scroll");
+        document.querySelectorAll(
+            ".reveal-on-scroll"
+        );
 
 
-    const observer = new IntersectionObserver(
+    if (!revealElements.length) {
 
-        function (entries) {
+        return;
 
-
-            entries.forEach(function (entry) {
-
-
-                if (entry.isIntersecting) {
+    }
 
 
-                    entry.target.classList.add("active");
+    const observer =
+
+        new IntersectionObserver(
+
+            function (entries) {
 
 
-                    observer.unobserve(entry.target);
+                entries.forEach(function (entry) {
 
 
-                }
+                    if (entry.isIntersecting) {
 
 
-            });
+                        entry.target.classList.add(
+                            "active"
+                        );
 
 
-        },
+                        observer.unobserve(
+                            entry.target
+                        );
 
-        {
 
-            threshold: 0.15
+                    }
 
-        }
 
-    );
+                });
+
+
+            },
+
+            {
+
+                threshold: 0.15
+
+            }
+
+        );
 
 
     revealElements.forEach(function (element) {
 
-
         observer.observe(element);
-
 
     });
 
@@ -346,20 +448,39 @@ function initialiseRevealAnimations() {
 function animateWords() {
 
 
-    const elements = document.querySelectorAll(
+    const elements =
 
-        ".section-title, .closing-title"
-
-    );
+        document.querySelectorAll(
+            ".section-title, .closing-title"
+        );
 
 
     elements.forEach(function (element) {
 
 
-        const text = element.textContent.trim();
+        /* Prevent duplicate animation */
+
+        if (
+            element.dataset.wordsAnimated ===
+            "true"
+        ) {
+
+            return;
+
+        }
 
 
-        const words = text.split(" ");
+        element.dataset.wordsAnimated = "true";
+
+
+        const text =
+
+            element.textContent.trim();
+
+
+        const words =
+
+            text.split(/\s+/);
 
 
         element.innerHTML = "";
@@ -368,7 +489,9 @@ function animateWords() {
         words.forEach(function (word, index) {
 
 
-            const span = document.createElement("span");
+            const span =
+
+                document.createElement("span");
 
 
             span.classList.add("word");
@@ -385,11 +508,15 @@ function animateWords() {
             element.appendChild(span);
 
 
-            element.appendChild(
+            if (index < words.length - 1) {
 
-                document.createTextNode(" ")
+                element.appendChild(
 
-            );
+                    document.createTextNode(" ")
+
+                );
+
+            }
 
 
         });
