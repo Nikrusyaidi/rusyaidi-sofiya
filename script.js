@@ -22,7 +22,7 @@ const musicIcon = document.querySelector(".music-icon");
 openButton.addEventListener("click", function () {
 
 
-    /* Fade out welcome screen */
+    /* Fade welcome screen */
 
     welcomeScreen.classList.add("fade-out");
 
@@ -37,12 +37,14 @@ openButton.addEventListener("click", function () {
 
         /* Show invitation */
 
-        mainInvitation.classList.add("show");
+        mainInvitation.style.display = "block";
 
 
-        /* Show music button */
+        setTimeout(function () {
 
-        musicButton.classList.add("show");
+            mainInvitation.classList.add("show");
+
+        }, 50);
 
 
         /* Scroll to top */
@@ -56,9 +58,15 @@ openButton.addEventListener("click", function () {
         });
 
 
-        /* Try playing music */
+        /* Show music button */
+
+        musicButton.classList.add("show");
+
+
+        /* Play music */
 
         backgroundMusic.play()
+
             .then(function () {
 
                 musicButton.classList.add("playing");
@@ -66,20 +74,20 @@ openButton.addEventListener("click", function () {
                 musicIcon.innerHTML = "♫";
 
             })
+
             .catch(function () {
 
-                console.log("Music autoplay blocked by browser.");
+                console.log("Music autoplay blocked.");
 
             });
 
 
         /* Start animations */
 
-        setTimeout(function () {
+        initialiseRevealAnimations();
 
-            initialiseRevealAnimations();
 
-        }, 300);
+        animateWords();
 
 
     }, 800);
@@ -130,7 +138,9 @@ musicButton.addEventListener("click", function () {
 ======================================== */
 
 const weddingDate = new Date(
+
     "October 18, 2026 11:00:00"
+
 ).getTime();
 
 
@@ -157,12 +167,14 @@ function updateCountdown() {
 
         return;
 
+
     }
 
 
     const days = Math.floor(
 
         distance /
+
         (1000 * 60 * 60 * 24)
 
     );
@@ -171,8 +183,11 @@ function updateCountdown() {
     const hours = Math.floor(
 
         (distance %
+
             (1000 * 60 * 60 * 24))
+
         /
+
         (1000 * 60 * 60)
 
     );
@@ -181,8 +196,11 @@ function updateCountdown() {
     const minutes = Math.floor(
 
         (distance %
+
             (1000 * 60 * 60))
+
         /
+
         (1000 * 60)
 
     );
@@ -191,8 +209,11 @@ function updateCountdown() {
     const seconds = Math.floor(
 
         (distance %
+
             (1000 * 60))
+
         /
+
         1000
 
     );
@@ -203,23 +224,17 @@ function updateCountdown() {
 
     document.getElementById("hours").innerHTML =
 
-        hours
-            .toString()
-            .padStart(2, "0");
+        hours.toString().padStart(2, "0");
 
 
     document.getElementById("minutes").innerHTML =
 
-        minutes
-            .toString()
-            .padStart(2, "0");
+        minutes.toString().padStart(2, "0");
 
 
     document.getElementById("seconds").innerHTML =
 
-        seconds
-            .toString()
-            .padStart(2, "0");
+        seconds.toString().padStart(2, "0");
 
 
 }
@@ -248,22 +263,77 @@ function copyAccount() {
     navigator.clipboard.writeText(accountNumber);
 
 
-    const button =
-        document.querySelector(".copy-account");
+    const button = document.querySelector(".copy-account");
 
 
-    button.innerText =
-        "NOMBOR AKAUN DISALIN ✓";
+    button.innerText = "NOMBOR AKAUN DISALIN ✓";
 
 
     setTimeout(function () {
 
 
-        button.innerText =
-            "SALIN NOMBOR AKAUN";
+        button.innerText = "SALIN NOMBOR AKAUN";
 
 
     }, 2000);
+
+
+}
+
+
+/* ========================================
+   SCROLL REVEAL ANIMATION
+======================================== */
+
+function initialiseRevealAnimations() {
+
+
+    const revealElements =
+
+        document.querySelectorAll(".reveal-on-scroll");
+
+
+    const observer = new IntersectionObserver(
+
+        function (entries) {
+
+
+            entries.forEach(function (entry) {
+
+
+                if (entry.isIntersecting) {
+
+
+                    entry.target.classList.add("active");
+
+
+                    observer.unobserve(entry.target);
+
+
+                }
+
+
+            });
+
+
+        },
+
+        {
+
+            threshold: 0.15
+
+        }
+
+    );
+
+
+    revealElements.forEach(function (element) {
+
+
+        observer.observe(element);
+
+
+    });
 
 
 }
@@ -277,188 +347,52 @@ function animateWords() {
 
 
     const elements = document.querySelectorAll(
-        ".animate-words"
+
+        ".section-title, .closing-title"
+
     );
 
 
     elements.forEach(function (element) {
 
 
-        if (element.dataset.animated === "true") {
-
-            return;
-
-        }
+        const text = element.textContent.trim();
 
 
-        element.dataset.animated = "true";
+        const words = text.split(" ");
 
 
-        const walker = document.createTreeWalker(
-
-            element,
-
-            NodeFilter.SHOW_TEXT,
-
-            null,
-
-            false
-
-        );
+        element.innerHTML = "";
 
 
-        const textNodes = [];
+        words.forEach(function (word, index) {
 
 
-        let node;
+            const span = document.createElement("span");
 
 
-        while (node = walker.nextNode()) {
+            span.classList.add("word");
 
 
-            if (
-                node.nodeValue.trim().length > 0
-            ) {
-
-                textNodes.push(node);
-
-            }
-
-        }
+            span.textContent = word;
 
 
-        let delay = 0;
+            span.style.animationDelay =
+
+                (index * 0.12) + "s";
 
 
-        textNodes.forEach(function (textNode) {
+            element.appendChild(span);
 
 
-            const words =
-                textNode.nodeValue.split(/(\s+)/);
+            element.appendChild(
 
-
-            const fragment =
-                document.createDocumentFragment();
-
-
-            words.forEach(function (word) {
-
-
-                if (word.trim() === "") {
-
-
-                    fragment.appendChild(
-
-                        document.createTextNode(word)
-
-                    );
-
-
-                } else {
-
-
-                    const span =
-                        document.createElement("span");
-
-
-                    span.classList.add("word");
-
-
-                    span.textContent = word;
-
-
-                    span.style.animationDelay =
-                        delay + "s";
-
-
-                    delay += 0.06;
-
-
-                    fragment.appendChild(span);
-
-                }
-
-
-            });
-
-
-            textNode.parentNode.replaceChild(
-
-                fragment,
-
-                textNode
+                document.createTextNode(" ")
 
             );
 
 
         });
-
-
-    });
-
-
-}
-
-
-/* ========================================
-   SCROLL REVEAL
-======================================== */
-
-function initialiseRevealAnimations() {
-
-
-    animateWords();
-
-
-    const sections = document.querySelectorAll(
-        ".reveal-section"
-    );
-
-
-    const observer =
-        new IntersectionObserver(
-
-            function (entries) {
-
-
-                entries.forEach(function (entry) {
-
-
-                    if (entry.isIntersecting) {
-
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-
-                    }
-
-
-                });
-
-
-            },
-
-
-            {
-
-                threshold: 0.12
-
-            }
-
-        );
-
-
-    sections.forEach(function (section) {
-
-
-        observer.observe(section);
 
 
     });
