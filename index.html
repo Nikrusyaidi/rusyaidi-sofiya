@@ -16,14 +16,2490 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
         rel="stylesheet">
 
 
-    <!-- CSS -->
+<style>
 
-    <link rel="stylesheet" href="style.css">
+/* =========================================================
+   RUSYAIDI & SOFIYA
+   WEDDING INVITATION
+   COMPLETE STYLES
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    background: #dcebf3;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #163a63;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(190, 220, 235, 0.70),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(215, 234, 243, 0.85),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            180deg,
+            #e9f4f8 0%,
+            #deedf4 45%,
+            #eaf5f9 100%
+        );
+}
+
+
+/* =========================================================
+   COLOUR SYSTEM
+========================================================= */
+
+:root {
+
+    --navy: #163a63;
+
+    --deep-navy: #0d2948;
+
+    --blue: #2e5f91;
+
+    --soft-blue: #7f9fbd;
+
+    --light-blue: #e7f3f8;
+
+    --pale-blue: #edf7fa;
+
+    --gold: #b89a62;
+
+    --soft-gold: #d6c39d;
+
+    --white: #ffffff;
+
+    --text-light: #66788a;
+
+    --border-blue:
+        rgba(22, 58, 99, 0.14);
+
+    --glass-white:
+        rgba(255, 255, 255, 0.60);
+}
+
+
+/* =========================================================
+   MAIN INVITATION
+========================================================= */
+
+.main-invitation {
+
+    display: none;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.main-invitation.show {
+
+    display: block;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   GLOBAL SECTION
+========================================================= */
+
+section {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.section-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 200;
+}
+
+
+/* =========================================================
+   COMMON TEXT
+========================================================= */
+
+.section-small-title {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: var(--soft-blue);
+
+    margin-bottom: 12px;
+}
+
+
+.section-title {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size:
+        clamp(34px, 5vw, 50px);
+
+    font-weight: 500;
+
+    color: var(--deep-navy);
+
+    letter-spacing: 1px;
+}
+
+
+.section-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 18px auto 26px;
+}
+
+
+.section-ornament {
+
+    color: var(--gold);
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   WELCOME SCREEN
+========================================================= */
+
+.welcome-screen {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        45px 20px;
+
+    background:
+        linear-gradient(
+            rgba(227, 241, 247, 0.82),
+            rgba(213, 231, 241, 0.90)
+        ),
+        url("image/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.welcome-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.38),
+            rgba(22, 58, 99, 0.03)
+        );
+
+    pointer-events: none;
+}
+
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 200;
+
+    width: 100%;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   WELCOME TYPOGRAPHY
+========================================================= */
+
+.bismillah {
+
+    font-size: 22px;
+
+    margin-bottom: 24px;
+
+    color: var(--deep-navy);
+}
+
+
+.wedding-title {
+
+    font-size: 9px;
+
+    letter-spacing: 6px;
+
+    color: var(--soft-blue);
+
+    margin-bottom: 22px;
+}
+
+
+.groom-name,
+.bride-name {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size:
+        clamp(62px, 9vw, 102px);
+
+    font-weight: normal;
+
+    color: var(--deep-navy);
+
+    line-height: 0.9;
+}
+
+
+.ampersand {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 48px;
+
+    color: var(--gold);
+
+    margin: 11px 0;
+}
+
+
+.divider {
+
+    width: 55px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 26px auto;
+}
+
+
+.wedding-date {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: var(--blue);
+}
+
+
+.top-divider,
+.bottom-divider {
+
+    color: var(--gold);
+
+    margin: 15px 0;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-button {
+
+    margin-top: 24px;
+
+    padding:
+        14px 30px;
+
+    border:
+        1px solid var(--navy);
+
+    background:
+        rgba(255, 255, 255, 0.30);
+
+    color: var(--navy);
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 250;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.open-button:hover {
+
+    background: var(--navy);
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   WELCOME DECORATIONS
+========================================================= */
+
+.corner {
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    opacity: 0.15;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+.corner-top-left {
+
+    top: 0;
+
+    left: 0;
+
+    border-right:
+        1px solid var(--navy);
+
+    border-bottom:
+        1px solid var(--navy);
+
+    border-radius:
+        0 0 110px 0;
+}
+
+
+.corner-bottom-right {
+
+    right: 0;
+
+    bottom: 0;
+
+    border-left:
+        1px solid var(--navy);
+
+    border-top:
+        1px solid var(--navy);
+
+    border-radius:
+        110px 0 0 0;
+}
+
+
+.leaves {
+
+    position: absolute;
+
+    font-family: serif;
+
+    font-size: 165px;
+
+    color:
+        rgba(22, 58, 99, 0.06);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+.leaves-top-right {
+
+    top: -40px;
+
+    right: -20px;
+
+    transform:
+        rotate(35deg);
+}
+
+
+.leaves-bottom-left {
+
+    left: -30px;
+
+    bottom: -50px;
+
+    transform:
+        rotate(210deg);
+}
+
+
+/* =========================================================
+   WALIMATULURUS
+========================================================= */
+
+.invitation-intro {
+
+    padding:
+        52px 20px 42px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(232, 244, 249, 0.96),
+            rgba(215, 233, 242, 0.94)
+        );
+}
+
+
+.intro-pattern::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 4%;
+
+    top: 50%;
+
+    width: 120px;
+
+    height: 120px;
+
+    border:
+        1px solid
+        rgba(46, 95, 145, 0.12);
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.intro-pattern::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 4%;
+
+    top: 50%;
+
+    width: 120px;
+
+    height: 120px;
+
+    border:
+        1px solid
+        rgba(46, 95, 145, 0.12);
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.intro-bismillah {
+
+    font-size: 18px;
+
+    margin-bottom: 16px;
+
+    color: var(--deep-navy);
+}
+
+
+.intro-small-title {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: var(--soft-blue);
+
+    margin-bottom: 15px;
+}
+
+
+.intro-heading {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(31px, 5vw, 46px);
+
+    font-weight: 500;
+
+    color: var(--deep-navy);
+}
+
+
+.intro-heading span {
+
+    display: block;
+
+    font-size: 0.72em;
+
+    margin-top: 5px;
+
+    color: var(--blue);
+}
+
+
+.intro-line {
+
+    width: 48px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 18px auto;
+}
+
+
+.family-names {
+
+    margin-bottom: 20px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    color: var(--deep-navy);
+}
+
+
+.intro-text {
+
+    max-width: 560px;
+
+    margin:
+        0 auto 24px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--text-light);
+}
+
+
+.couple-name {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(24px, 3vw, 31px);
+
+    font-weight: 500;
+
+    line-height: 1.18;
+
+    color: var(--deep-navy);
+}
+
+
+.intro-ampersand {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 34px;
+
+    color: var(--gold);
+
+    margin: 10px 0;
+}
+
+
+/* =========================================================
+   MAJLIS PERKAHWINAN
+========================================================= */
+
+.wedding-details {
+
+    padding:
+        48px 20px 42px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(223, 237, 244, 0.97),
+            rgba(235, 245, 249, 0.97)
+        );
+}
+
+
+.leaf-pattern::before {
+
+    content: "❧";
+
+    position: absolute;
+
+    left: -45px;
+
+    top: 30%;
+
+    font-size: 220px;
+
+    color:
+        rgba(46, 95, 145, 0.06);
+
+    transform:
+        rotate(30deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.leaf-pattern::after {
+
+    content: "❧";
+
+    position: absolute;
+
+    right: -45px;
+
+    bottom: 12%;
+
+    font-size: 220px;
+
+    color:
+        rgba(46, 95, 145, 0.06);
+
+    transform:
+        rotate(210deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.details-wrapper {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 200;
+}
+
+
+.detail-item {
+
+    margin-bottom: 21px;
+}
+
+
+.detail-label {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: var(--soft-blue);
+
+    margin-bottom: 7px;
+}
+
+
+.detail-item h3 {
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size:
+        clamp(15px, 2vw, 19px);
+
+    font-weight: 500;
+
+    color: var(--deep-navy);
+}
+
+
+.venue-item {
+
+    margin-top: 28px;
+
+    padding-top: 23px;
+
+    border-top:
+        1px solid
+        rgba(22, 58, 99, 0.12);
+}
+
+
+.venue-address {
+
+    margin-top: 11px;
+
+    font-size: 10px;
+
+    line-height: 1.75;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   LOCATION BUTTON
+   SAME STYLE AS RSVP
+========================================================= */
+
+.location-button {
+
+    display: inline-block;
+
+    margin-top: 17px;
+
+    padding:
+        14px 27px;
+
+    background:
+        var(--navy);
+
+    color:
+        white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    border:
+        1px solid var(--navy);
+
+    position: relative;
+
+    z-index: 250;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.location-button:hover {
+
+    background:
+        var(--blue);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   DETIK BAHAGIA
+========================================================= */
+
+.countdown-section {
+
+    padding:
+        48px 20px 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d6eaf3 0%,
+            #e8f4f8 50%,
+            #d9eaf2 100%
+        );
+}
+
+
+.countdown-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 22px;
+}
+
+
+.countdown-item {
+
+    width: 100px;
+
+    padding:
+        14px 8px;
+
+    border-top:
+        1px solid
+        rgba(22, 58, 99, 0.18);
+
+    border-bottom:
+        1px solid
+        rgba(22, 58, 99, 0.18);
+
+    background:
+        rgba(255,255,255,0.15);
+}
+
+
+.countdown-item span {
+
+    display: block;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 31px;
+
+    color: var(--deep-navy);
+}
+
+
+.countdown-item p {
+
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color: var(--soft-blue);
+}
+
+
+/* =========================================================
+   RSVP
+========================================================= */
+
+.rsvp-section {
+
+    padding:
+        48px 20px 42px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(224, 239, 246, 0.98),
+            rgba(211, 231, 241, 0.96)
+        );
+}
+
+
+.pattern-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -40px;
+
+    top: 50%;
+
+    width: 145px;
+
+    height: 145px;
+
+    border:
+        1px solid
+        rgba(46, 95, 145, 0.11);
+
+    transform:
+        rotate(45deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.pattern-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -40px;
+
+    top: 50%;
+
+    width: 145px;
+
+    height: 145px;
+
+    border:
+        1px solid
+        rgba(46, 95, 145, 0.11);
+
+    transform:
+        rotate(45deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.rsvp-description {
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--text-light);
+
+    margin-bottom: 21px;
+}
+
+
+.rsvp-button {
+
+    display: inline-block;
+
+    padding:
+        14px 27px;
+
+    background:
+        var(--navy);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    position: relative;
+
+    z-index: 250;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.rsvp-button:hover {
+
+    background:
+        var(--blue);
+
+    transform:
+        translateY(-3px);
+}
+
+
+.rsvp-note {
+
+    margin-top: 17px;
+
+    font-size: 10px;
+
+    font-style: italic;
+
+    color: var(--soft-blue);
+}
+
+
+/* =========================================================
+   ADDITIONAL INFORMATION
+========================================================= */
+
+.additional-info {
+
+    padding:
+        48px 20px 42px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e9f5f9,
+            #dcecf3
+        );
+}
+
+
+/* =========================================================
+   ACCORDION
+========================================================= */
+
+.info-accordion {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin:
+        10px auto;
+
+    border:
+        1px solid
+        rgba(22, 58, 99, 0.14);
+
+    background:
+        rgba(255,255,255,0.45);
+}
+
+
+.info-accordion summary {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        17px 20px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--deep-navy);
+}
+
+
+.info-accordion summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+.accordion-icon {
+
+    font-size: 19px;
+
+    color: var(--gold);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.info-accordion[open]
+.accordion-icon {
+
+    transform:
+        rotate(45deg);
+}
+
+
+.accordion-content {
+
+    padding:
+        4px 20px 26px;
+
+    animation:
+        accordionFade 0.4s ease;
+}
+
+
+@keyframes accordionFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+.gift-description {
+
+    max-width: 500px;
+
+    margin:
+        16px auto 22px;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--text-light);
+}
+
+
+.gift-card {
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(22,58,99,0.10);
+}
+
+
+.duitnow-qr {
+
+    width: 195px;
+
+    max-width: 100%;
+
+    margin-bottom: 17px;
+}
+
+
+.bank-name {
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: var(--soft-blue);
+
+    margin-bottom: 8px;
+}
+
+
+.account-holder {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 25px;
+
+    color: var(--deep-navy);
+
+    margin-bottom: 7px;
+}
+
+
+.account-number {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: var(--navy);
+
+    margin-bottom: 17px;
+}
+
+
+.copy-account {
+
+    padding:
+        11px 18px;
+
+    background:
+        transparent;
+
+    border:
+        1px solid var(--navy);
+
+    color:
+        var(--navy);
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.copy-account:hover {
+
+    background:
+        var(--navy);
+
+    color: white;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-description {
+
+    margin:
+        16px auto 21px;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--text-light);
+}
+
+
+.contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        13px 16px;
+
+    margin-bottom: 8px;
+
+    border:
+        1px solid
+        rgba(22,58,99,0.12);
+
+    color:
+        var(--navy);
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.contact-card:hover {
+
+    background:
+        rgba(22,58,99,0.04);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.contact-name {
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+}
+
+
+.contact-phone {
+
+    font-size: 9px;
+
+    color:
+        var(--text-light);
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.closing-section {
+
+    padding:
+        60px 20px 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,233,242,0.97),
+            rgba(234,245,249,0.97)
+        ),
+        url("image/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.closing-pattern::before {
+
+    content: "❧";
+
+    position: absolute;
+
+    left: -40px;
+
+    top: 18%;
+
+    font-size: 210px;
+
+    color:
+        rgba(22,58,99,0.05);
+
+    transform:
+        rotate(30deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.closing-pattern::after {
+
+    content: "❧";
+
+    position: absolute;
+
+    right: -40px;
+
+    bottom: -20px;
+
+    font-size: 210px;
+
+    color:
+        rgba(22,58,99,0.05);
+
+    transform:
+        rotate(210deg);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.closing-content {
+
+    position: relative;
+
+    z-index: 200;
+}
+
+
+.closing-title {
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:
+        clamp(30px,4vw,43px);
+
+    font-weight: 500;
+
+    color:
+        var(--deep-navy);
+}
+
+
+.closing-message {
+
+    max-width: 520px;
+
+    margin:
+        20px auto;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color:
+        var(--text-light);
+}
+
+
+.closing-doa {
+
+    max-width: 520px;
+
+    margin:
+        23px auto;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    color:
+        var(--navy);
+}
+
+
+.closing-names {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(50px,7vw,72px);
+
+    color:
+        var(--deep-navy);
+
+    margin-top: 22px;
+}
+
+
+.closing-names span {
+
+    color:
+        var(--gold);
+
+    margin:
+        0 7px;
+}
+
+
+.closing-date {
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color:
+        var(--soft-blue);
+}
+
+
+.closing-footer {
+
+    margin-top: 32px;
+
+    position: relative;
+
+    z-index: 200;
+}
+
+
+.footer-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+        var(--gold);
+
+    margin:
+        0 auto 12px;
+}
+
+
+.closing-footer p {
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--soft-blue);
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-button {
+
+    position: fixed;
+
+    width: 50px;
+
+    height: 50px;
+
+    bottom: 22px;
+
+    right: 22px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(22,58,99,0.18);
+
+    background:
+        rgba(255,255,255,0.92);
+
+    color:
+        var(--navy);
+
+    cursor: pointer;
+
+    z-index: 1200;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 6px 22px
+        rgba(22,58,99,0.13);
+}
+
+
+.music-button.show {
+
+    display: flex;
+}
+
+
+.music-button.playing {
+
+    animation:
+        musicPulse 2s infinite;
+}
+
+
+.music-icon {
+
+    font-size: 19px;
+}
+
+
+@keyframes musicPulse {
+
+    0% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.07);
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   WELCOME FADE
+========================================================= */
+
+.welcome-screen.fade-out {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.8s ease;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal-on-scroll {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.reveal-on-scroll.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   WORD ANIMATION
+========================================================= */
+
+.word {
+
+    display: inline-block;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    animation:
+        wordReveal 0.65s forwards;
+}
+
+
+@keyframes wordReveal {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   INFINITE FALLING LEAVES
+========================================================= */
+
+.falling-leaves {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+}
+
+
+.falling-leaf {
+
+    position: absolute;
+
+    top: -60px;
+
+    left: 0;
+
+    width: 16px;
+
+    height: 25px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    will-change:
+        transform,
+        opacity;
+
+    filter:
+        drop-shadow(
+            0 1px 2px
+            rgba(22,58,99,0.08)
+        );
+}
+
+
+.falling-leaf::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25,70,105,0.42),
+            rgba(115,160,185,0.20)
+        );
+
+    border-radius:
+        0 100% 0 100%;
+
+    transform:
+        rotate(45deg);
+
+    box-shadow:
+        inset 1px 1px 2px
+        rgba(255,255,255,0.25);
+}
+
+
+/* =========================================================
+   LEAF ANIMATION
+========================================================= */
+
+@keyframes continuousLeafFall {
+
+    0% {
+
+        transform:
+            translate3d(
+                var(--start-x),
+                -80px,
+                0
+            )
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+
+    8% {
+
+        opacity:
+            var(--leaf-opacity);
+    }
+
+
+    25% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--start-x)
+                    +
+                    var(--drift-a)
+                ),
+                25vh,
+                0
+            )
+            rotate(100deg);
+    }
+
+
+    50% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--start-x)
+                    +
+                    var(--drift-b)
+                ),
+                50vh,
+                0
+            )
+            rotate(190deg);
+    }
+
+
+    75% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--start-x)
+                    +
+                    var(--drift-c)
+                ),
+                75vh,
+                0
+            )
+            rotate(280deg);
+
+        opacity:
+            var(--leaf-opacity);
+    }
+
+
+    100% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--start-x)
+                    +
+                    var(--drift-d)
+                ),
+                115vh,
+                0
+            )
+            rotate(380deg);
+
+        opacity: 0;
+    }
+}
+
+
+.falling-leaf.animate {
+
+    animation-name:
+        continuousLeafFall;
+
+    animation-timing-function:
+        linear;
+
+    animation-fill-mode:
+        forwards;
+}
+
+
+/* =========================================================
+   FLOATING NAVIGATION
+========================================================= */
+
+.floating-nav {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 20px;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    padding: 7px;
+
+    width: max-content;
+
+    max-width:
+        calc(100vw - 30px);
+
+    background:
+        rgba(247,252,254,0.94);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    border:
+        1px solid
+        rgba(22,58,99,0.12);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(22,58,99,0.15);
+
+    z-index: 1100;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+
+.floating-nav.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.nav-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 78px;
+
+    padding:
+        8px 10px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color:
+        var(--deep-navy);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.nav-icon {
+
+    display: block;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    color:
+        var(--gold);
+
+    margin-bottom: 4px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.nav-label {
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 0.8px;
+
+    white-space: nowrap;
+
+    color:
+        var(--deep-navy);
+}
+
+
+.nav-item.active {
+
+    background:
+        rgba(218,235,243,0.82);
+}
+
+
+.nav-item.active .nav-icon {
+
+    color:
+        var(--navy);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.nav-item.active .nav-label {
+
+    color:
+        var(--navy);
+}
+
+
+.nav-item:hover {
+
+    background:
+        rgba(226,240,247,0.80);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.nav-item:hover .nav-icon {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .floating-nav {
+
+        left: 12px;
+
+        right: 12px;
+
+        bottom: 12px;
+
+        width: auto;
+
+        max-width: none;
+
+        transform:
+            translateY(15px);
+
+        justify-content:
+            flex-start;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        padding: 6px;
+
+        border-radius: 21px;
+
+        scrollbar-width: none;
+    }
+
+
+    .floating-nav.show {
+
+        transform:
+            translateY(0);
+    }
+
+
+    .floating-nav::-webkit-scrollbar {
+
+        display: none;
+    }
+
+
+    .nav-item {
+
+        flex:
+            0 0 auto;
+
+        min-width: 72px;
+
+        padding:
+            8px 9px;
+    }
+
+
+    .nav-icon {
+
+        font-size: 17px;
+    }
+
+
+    .nav-label {
+
+        font-size: 6px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE GENERAL
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-screen {
+
+        padding:
+            38px 18px;
+    }
+
+
+    .bismillah {
+
+        font-size: 18px;
+    }
+
+
+    .groom-name,
+    .bride-name {
+
+        font-size: 68px;
+    }
+
+
+    .invitation-intro {
+
+        padding:
+            40px 16px 30px;
+    }
+
+
+    .intro-pattern::before,
+    .intro-pattern::after {
+
+        width: 80px;
+
+        height: 80px;
+    }
+
+
+    .family-names {
+
+        font-size: 19px;
+    }
+
+
+    .intro-text {
+
+        font-size: 11px;
+
+        line-height: 1.75;
+    }
+
+
+    .wedding-details,
+    .countdown-section,
+    .rsvp-section,
+    .additional-info {
+
+        padding:
+            38px 16px 30px;
+    }
+
+
+    .section-title {
+
+        font-size:
+            32px;
+    }
+
+
+    .detail-item {
+
+        margin-bottom:
+            18px;
+    }
+
+
+    .venue-item {
+
+        margin-top:
+            24px;
+
+        padding-top:
+            20px;
+    }
+
+
+    .countdown-container {
+
+        gap: 6px;
+    }
+
+
+    .countdown-item {
+
+        width:
+            72px;
+
+        padding:
+            12px 3px;
+    }
+
+
+    .countdown-item span {
+
+        font-size:
+            25px;
+    }
+
+
+    .countdown-item p {
+
+        font-size:
+            6px;
+
+        letter-spacing:
+            1px;
+    }
+
+
+    .rsvp-button,
+    .location-button {
+
+        padding:
+            13px 22px;
+
+        font-size:
+            8px;
+    }
+
+
+    .info-accordion summary {
+
+        padding:
+            15px;
+
+        font-size:
+            8px;
+    }
+
+
+    .accordion-content {
+
+        padding:
+            3px 15px 24px;
+    }
+
+
+    .duitnow-qr {
+
+        width:
+            180px;
+    }
+
+
+    .account-holder {
+
+        font-size:
+            22px;
+    }
+
+
+    .contact-card {
+
+        flex-direction:
+            column;
+
+        gap:
+            5px;
+
+        text-align:
+            center;
+    }
+
+
+    .closing-section {
+
+        padding:
+            48px 18px 22px;
+    }
+
+
+    .closing-doa {
+
+        font-size:
+            18px;
+    }
+
+
+    .closing-names {
+
+        font-size:
+            50px;
+    }
+
+
+    .music-button {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+        right:
+            17px;
+
+        bottom:
+            17px;
+    }
+
+
+    .falling-leaf {
+
+        transform:
+            scale(0.82);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+    }
+
+
+    .falling-leaf {
+
+        animation:
+            none !important;
+
+        display:
+            none;
+    }
+
+
+    .word,
+    .reveal-on-scroll {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
+}
+
+</style>
 
 </head>
 
@@ -31,17 +2507,25 @@
 <body>
 
 
-    <!-- ========================================
+    <!-- =====================================================
+         FALLING LEAVES
+    ===================================================== -->
+
+    <div
+        class="falling-leaves"
+        id="fallingLeaves">
+    </div>
+
+
+    <!-- =====================================================
          WELCOME SCREEN
-    ========================================= -->
+    ===================================================== -->
 
     <section class="welcome-screen">
 
 
         <div class="welcome-background"></div>
 
-
-        <!-- Decorative patterns -->
 
         <div class="corner corner-top-left"></div>
 
@@ -62,32 +2546,44 @@
 
 
             <p class="bismillah reveal-text">
+
                 بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+
             </p>
 
 
             <div class="top-divider">
+
                 ✦
+
             </div>
 
 
             <p class="wedding-title reveal-text">
+
                 THE WEDDING OF
+
             </p>
 
 
             <h1 class="groom-name reveal-text">
+
                 Rusyaidi
+
             </h1>
 
 
             <div class="ampersand">
+
                 &
+
             </div>
 
 
             <h1 class="bride-name reveal-text">
+
                 Sofiya
+
             </h1>
 
 
@@ -95,16 +2591,22 @@
 
 
             <p class="wedding-date reveal-text">
+
                 18 OCTOBER 2026
+
             </p>
 
 
             <div class="bottom-divider">
+
                 ✦
+
             </div>
 
 
-            <button class="open-button" id="openInvitation">
+            <button
+                class="open-button"
+                id="openInvitation">
 
                 BUKA JEMPUTAN
 
@@ -117,36 +2619,49 @@
     </section>
 
 
-    <!-- ========================================
+    <!-- =====================================================
          MAIN INVITATION
-    ========================================= -->
+    ===================================================== -->
 
-    <main class="main-invitation" id="mainInvitation">
+    <main
+        class="main-invitation"
+        id="mainInvitation">
 
 
-        <!-- ========================================
-             INTRODUCTION
-        ========================================= -->
+        <!-- =================================================
+             WALIMATULURUS
+        ================================================= -->
 
-        <section class="invitation-intro intro-pattern" id="walimatulurus">
+        <section
+            class="invitation-intro intro-pattern"
+            id="walimatulurus">
 
 
             <div class="section-content">
 
 
                 <p class="intro-bismillah reveal-on-scroll">
+
                     بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+
                 </p>
 
 
                 <p class="intro-small-title reveal-on-scroll">
+
                     WALIMATULURUS
+
                 </p>
 
 
                 <h2 class="intro-heading reveal-on-scroll">
+
                     Assalamualaikum
-                    <span>& Salam Sejahtera</span>
+
+                    <span>
+                        & Salam Sejahtera
+                    </span>
+
                 </h2>
 
 
@@ -155,11 +2670,17 @@
 
                 <div class="family-names reveal-on-scroll">
 
-                    <p>Norazilah Mohd Yusof</p>
+                    <p>
+                        Norazilah Mohd Yusof
+                    </p>
 
-                    <p>Nik Ahmad Syadzili</p>
+                    <p>
+                        Nik Ahmad Syadzili
+                    </p>
 
-                    <p>Nik Ahmad Sufyan</p>
+                    <p>
+                        Nik Ahmad Sufyan
+                    </p>
 
                 </div>
 
@@ -191,7 +2712,9 @@
 
 
                 <div class="intro-ampersand">
+
                     &
+
                 </div>
 
 
@@ -212,28 +2735,36 @@
         </section>
 
 
-        <!-- ========================================
-             WEDDING DETAILS
-        ========================================= -->
+        <!-- =================================================
+             MAJLIS PERKAHWINAN
+        ================================================= -->
 
-        <section class="wedding-details leaf-pattern" id="majlis">
+        <section
+            class="wedding-details leaf-pattern"
+            id="majlis">
 
 
             <div class="section-content">
 
 
                 <div class="section-ornament reveal-on-scroll">
+
                     ✦
+
                 </div>
 
 
                 <p class="section-small-title reveal-on-scroll">
+
                     SAVE THE DATE
+
                 </p>
 
 
                 <h2 class="section-title reveal-on-scroll">
+
                     Majlis Perkahwinan
+
                 </h2>
 
 
@@ -243,14 +2774,11 @@
                 <div class="details-wrapper">
 
 
-                    <!-- HARI -->
-
                     <div class="detail-item reveal-on-scroll">
 
                         <p class="detail-label">
                             HARI
                         </p>
-
 
                         <h3>
                             Ahad
@@ -259,14 +2787,11 @@
                     </div>
 
 
-                    <!-- TARIKH -->
-
                     <div class="detail-item reveal-on-scroll">
 
                         <p class="detail-label">
                             TARIKH
                         </p>
-
 
                         <h3>
                             18 Oktober 2026
@@ -275,14 +2800,11 @@
                     </div>
 
 
-                    <!-- MASA -->
-
                     <div class="detail-item reveal-on-scroll">
 
                         <p class="detail-label">
                             MASA
                         </p>
-
 
                         <h3>
                             11:00 Pagi — 4:00 Petang
@@ -291,9 +2813,8 @@
                     </div>
 
 
-                    <!-- LOKASI -->
-
-                    <div class="detail-item venue-item reveal-on-scroll">
+                    <div
+                        class="detail-item venue-item reveal-on-scroll">
 
 
                         <p class="detail-label">
@@ -327,7 +2848,8 @@
                         </p>
 
 
-                        <a href="https://maps.app.goo.gl/8HQZSuxbEHKsfGTD9"
+                        <a
+                            href="https://maps.app.goo.gl/8HQZSuxbEHKsfGTD9"
                             class="location-button"
                             target="_blank"
                             rel="noopener">
@@ -349,69 +2871,94 @@
         </section>
 
 
-        <!-- ========================================
-             COUNTDOWN
-        ========================================= -->
+        <!-- =================================================
+             DETIK BAHAGIA
+        ================================================= -->
 
-        <section class="countdown-section" id="countdown">
+        <section
+            class="countdown-section"
+            id="countdown">
 
 
             <div class="section-content">
 
 
                 <div class="section-ornament reveal-on-scroll">
+
                     ✦
+
                 </div>
 
 
                 <p class="section-small-title reveal-on-scroll">
+
                     MENANTI HARI BAHAGIA
+
                 </p>
 
 
                 <h2 class="section-title reveal-on-scroll">
+
                     Detik Bahagia
+
                 </h2>
 
 
                 <div class="section-line"></div>
 
 
-                <div class="countdown-container reveal-on-scroll">
+                <div
+                    class="countdown-container reveal-on-scroll">
 
 
                     <div class="countdown-item">
 
-                        <span id="days">00</span>
+                        <span id="days">
+                            00
+                        </span>
 
-                        <p>HARI</p>
+                        <p>
+                            HARI
+                        </p>
 
                     </div>
 
 
                     <div class="countdown-item">
 
-                        <span id="hours">00</span>
+                        <span id="hours">
+                            00
+                        </span>
 
-                        <p>JAM</p>
-
-                    </div>
-
-
-                    <div class="countdown-item">
-
-                        <span id="minutes">00</span>
-
-                        <p>MINIT</p>
+                        <p>
+                            JAM
+                        </p>
 
                     </div>
 
 
                     <div class="countdown-item">
 
-                        <span id="seconds">00</span>
+                        <span id="minutes">
+                            00
+                        </span>
 
-                        <p>SAAT</p>
+                        <p>
+                            MINIT
+                        </p>
+
+                    </div>
+
+
+                    <div class="countdown-item">
+
+                        <span id="seconds">
+                            00
+                        </span>
+
+                        <p>
+                            SAAT
+                        </p>
 
                     </div>
 
@@ -425,28 +2972,36 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- =================================================
              RSVP
-        ========================================= -->
+        ================================================= -->
 
-        <section class="rsvp-section pattern-section" id="rsvp">
+        <section
+            class="rsvp-section pattern-section"
+            id="rsvp">
 
 
             <div class="section-content">
 
 
                 <div class="section-ornament reveal-on-scroll">
+
                     ✦
+
                 </div>
 
 
                 <p class="section-small-title reveal-on-scroll">
+
                     KONFIRMASI KEHADIRAN
+
                 </p>
 
 
                 <h2 class="section-title reveal-on-scroll">
+
                     RSVP
+
                 </h2>
 
 
@@ -466,8 +3021,8 @@
 
                 <div class="rsvp-buttons reveal-on-scroll">
 
-
-                    <a href="https://forms.gle/WA97pYAnihwtZkR98"
+                    <a
+                        href="https://forms.gle/WA97pYAnihwtZkR98"
                         class="rsvp-button"
                         target="_blank"
                         rel="noopener">
@@ -475,7 +3030,6 @@
                         ISI BORANG RSVP
 
                     </a>
-
 
                 </div>
 
@@ -493,28 +3047,36 @@
         </section>
 
 
-        <!-- ========================================
-             MAKLUMAT TAMBAHAN
-        ========================================= -->
+        <!-- =================================================
+             UNTUK TETAMU
+        ================================================= -->
 
-        <section class="additional-info" id="tetamu">
+        <section
+            class="additional-info"
+            id="tetamu">
 
 
             <div class="section-content">
 
 
                 <div class="section-ornament reveal-on-scroll">
+
                     ✦
+
                 </div>
 
 
                 <p class="section-small-title reveal-on-scroll">
+
                     MAKLUMAT TAMBAHAN
+
                 </p>
 
 
                 <h2 class="section-title reveal-on-scroll">
+
                     Untuk Tetamu
+
                 </h2>
 
 
@@ -523,14 +3085,19 @@
 
                 <!-- TANDA KASIH -->
 
-                <details class="info-accordion reveal-on-scroll">
+                <details
+                    class="info-accordion reveal-on-scroll">
 
 
                     <summary>
 
-                        <span>TANDA KASIH</span>
+                        <span>
+                            TANDA KASIH
+                        </span>
 
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon">
+                            +
+                        </span>
 
                     </summary>
 
@@ -556,7 +3123,8 @@
                         <div class="gift-card">
 
 
-                            <img src="image/qr_syaidi.jpeg"
+                            <img
+                                src="image/qr_syaidi.jpeg"
                                 alt="DuitNow QR Code"
                                 class="duitnow-qr">
 
@@ -579,7 +3147,8 @@
                                 </p>
 
 
-                                <button class="copy-account"
+                                <button
+                                    class="copy-account"
                                     onclick="copyAccount()">
 
                                     SALIN NOMBOR AKAUN
@@ -601,19 +3170,25 @@
 
                 <!-- HUBUNGI KAMI -->
 
-                <details class="info-accordion reveal-on-scroll">
+                <details
+                    class="info-accordion reveal-on-scroll">
 
 
                     <summary>
 
-                        <span>HUBUNGI KAMI</span>
+                        <span>
+                            HUBUNGI KAMI
+                        </span>
 
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon">
+                            +
+                        </span>
 
                     </summary>
 
 
-                    <div class="accordion-content contact-content">
+                    <div
+                        class="accordion-content contact-content">
 
 
                         <p class="contact-description">
@@ -625,57 +3200,72 @@
                         </p>
 
 
-                        <a href="https://wa.me/60192106118"
+                        <a
+                            href="https://wa.me/60192106118"
                             target="_blank"
                             rel="noopener"
                             class="contact-card">
 
 
                             <span class="contact-name">
+
                                 Norazilah Yusof
+
                             </span>
 
 
                             <span class="contact-phone">
+
                                 019-210 6118
+
                             </span>
 
 
                         </a>
 
 
-                        <a href="https://wa.me/60192918994"
+                        <a
+                            href="https://wa.me/60192918994"
                             target="_blank"
                             rel="noopener"
                             class="contact-card">
 
 
                             <span class="contact-name">
+
                                 Syadzili
+
                             </span>
 
 
                             <span class="contact-phone">
+
                                 019-291 8994
+
                             </span>
 
 
                         </a>
 
 
-                        <a href="https://wa.me/60199992091"
+                        <a
+                            href="https://wa.me/60199992091"
                             target="_blank"
                             rel="noopener"
                             class="contact-card">
 
 
                             <span class="contact-name">
+
                                 Sufyan
+
                             </span>
 
 
                             <span class="contact-phone">
+
                                 019-999 2091
+
                             </span>
 
 
@@ -694,28 +3284,37 @@
         </section>
 
 
-        <!-- ========================================
+        <!-- =================================================
              CLOSING
-        ========================================= -->
+        ================================================= -->
 
-        <section class="closing-section closing-pattern" id="terima-kasih">
+        <section
+            class="closing-section closing-pattern"
+            id="terima-kasih">
 
 
-            <div class="section-content closing-content">
+            <div
+                class="section-content closing-content">
 
 
                 <div class="section-ornament reveal-on-scroll">
+
                     ✦
+
                 </div>
 
 
                 <p class="section-small-title reveal-on-scroll">
+
                     TERIMA KASIH
+
                 </p>
 
 
                 <h2 class="closing-title reveal-on-scroll">
+
                     Dengan penuh rasa syukur
+
                 </h2>
 
 
@@ -754,7 +3353,9 @@
 
                     Rusyaidi
 
-                    <span>&</span>
+                    <span>
+                        &
+                    </span>
 
                     Sofiya
 
@@ -762,7 +3363,9 @@
 
 
                 <p class="closing-date reveal-on-scroll">
+
                     18 OCTOBER 2026
+
                 </p>
 
 
@@ -774,7 +3377,9 @@
                 <div class="footer-line"></div>
 
                 <p>
+
                     Designed with love for our special day
+
                 </p>
 
             </div>
@@ -786,97 +3391,1229 @@
     </main>
 
 
-    <!-- ========================================
+    <!-- =====================================================
          BACKGROUND MUSIC
-    ========================================= -->
+    ===================================================== -->
 
-    <audio id="backgroundMusic" loop>
+    <audio
+        id="backgroundMusic"
+        loop>
 
-        <source src="music/music_web.mp3" type="audio/mpeg">
+        <source
+            src="music/music_web.mp3"
+            type="audio/mpeg">
 
     </audio>
 
-    <!-- ========================================
-     MENU BUTTON
-======================================== -->
 
-<button class="menu-button"
-        id="menuButton"
-        aria-label="Open menu">
+    <!-- =====================================================
+         FLOATING NAVIGATION
+    ===================================================== -->
 
-    ☰
-
-</button>
+    <nav
+        class="floating-nav"
+        id="floatingNav">
 
 
-<!-- ========================================
-     MENU PANEL
-======================================== -->
+        <a
+            href="#walimatulurus"
+            class="nav-item active">
 
-<nav class="menu-panel"
-     id="menuPanel">
+            <span class="nav-icon">
+                ❧
+            </span>
 
-    <div class="menu-header">
+            <span class="nav-label">
+                Walimatulurus
+            </span>
 
-        <span>
-            MENU
+        </a>
+
+
+        <a
+            href="#majlis"
+            class="nav-item">
+
+            <span class="nav-icon">
+                ✦
+            </span>
+
+            <span class="nav-label">
+                Majlis
+            </span>
+
+        </a>
+
+
+        <a
+            href="#countdown"
+            class="nav-item">
+
+            <span class="nav-icon">
+                ◷
+            </span>
+
+            <span class="nav-label">
+                Detik
+            </span>
+
+        </a>
+
+
+        <a
+            href="#rsvp"
+            class="nav-item">
+
+            <span class="nav-icon">
+                ✓
+            </span>
+
+            <span class="nav-label">
+                RSVP
+            </span>
+
+        </a>
+
+
+        <a
+            href="#tetamu"
+            class="nav-item">
+
+            <span class="nav-icon">
+                ♡
+            </span>
+
+            <span class="nav-label">
+                Tetamu
+            </span>
+
+        </a>
+
+
+        <a
+            href="#terima-kasih"
+            class="nav-item">
+
+            <span class="nav-icon">
+                ☎
+            </span>
+
+            <span class="nav-label">
+                Hubungi
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- =====================================================
+         MUSIC BUTTON
+    ===================================================== -->
+
+    <button
+        class="music-button"
+        id="musicButton"
+        aria-label="Music">
+
+        <span class="music-icon">
+            ♫
         </span>
-
-        <button class="menu-close"
-                id="menuClose"
-                aria-label="Close menu">
-
-            ×
-
-        </button>
-
-    </div>
-
-
-    <a href="#walimatulurus">
-        Walimatulurus
-    </a>
-
-
-    <a href="#majlis">
-        Majlis Perkahwinan
-    </a>
-
-
-    <a href="#countdown">
-        Detik Bahagia
-    </a>
-
-
-    <a href="#rsvp">
-        RSVP
-    </a>
-
-
-    <a href="#tetamu">
-        Untuk Tetamu
-    </a>
-
-
-    <a href="#terima-kasih">
-        Terima Kasih
-    </a>
-
-</nav>
-
-
-    <!-- MUSIC BUTTON -->
-
-    <button class="music-button" id="musicButton">
-
-        <span class="music-icon">♫</span>
 
     </button>
 
 
-    <!-- JAVASCRIPT -->
+<script>
 
-    <script src="script.js"></script>
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const openButton =
+    document.getElementById("openInvitation");
+
+const welcomeScreen =
+    document.querySelector(".welcome-screen");
+
+const mainInvitation =
+    document.getElementById("mainInvitation");
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicIcon =
+    document.querySelector(".music-icon");
+
+const floatingNav =
+    document.getElementById("floatingNav");
+
+const navItems =
+    document.querySelectorAll(".nav-item");
+
+
+/* =========================================================
+   OPEN INVITATION
+========================================================= */
+
+if (openButton) {
+
+    openButton.addEventListener(
+        "click",
+        function () {
+
+
+            if (
+                !welcomeScreen ||
+                !mainInvitation
+            ) {
+
+                return;
+
+            }
+
+
+            welcomeScreen.classList.add(
+                "fade-out"
+            );
+
+
+            setTimeout(
+                function () {
+
+
+                    welcomeScreen.style.display =
+                        "none";
+
+
+                    mainInvitation.style.display =
+                        "block";
+
+
+                    requestAnimationFrame(
+                        function () {
+
+                            mainInvitation.classList.add(
+                                "show"
+                            );
+
+                        }
+                    );
+
+
+                    window.scrollTo({
+
+                        top: 0,
+
+                        behavior: "auto"
+
+                    });
+
+
+                    /* Show floating navigation */
+
+                    if (floatingNav) {
+
+                        floatingNav.classList.add(
+                            "show"
+                        );
+
+                    }
+
+
+                    /* Show music button */
+
+                    if (musicButton) {
+
+                        musicButton.classList.add(
+                            "show"
+                        );
+
+                    }
+
+
+                    /* Play music */
+
+                    if (backgroundMusic) {
+
+                        backgroundMusic
+                            .play()
+                            .then(
+                                function () {
+
+
+                                    if (musicButton) {
+
+                                        musicButton.classList.add(
+                                            "playing"
+                                        );
+
+                                    }
+
+
+                                    if (musicIcon) {
+
+                                        musicIcon.innerHTML =
+                                            "♫";
+
+                                    }
+
+                                }
+                            )
+                            .catch(
+                                function () {
+
+                                    console.log(
+                                        "Music autoplay was blocked."
+                                    );
+
+                                }
+                            );
+
+                    }
+
+
+                    initialiseRevealAnimations();
+
+                    animateWords();
+
+
+                },
+                800
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+if (
+    musicButton &&
+    backgroundMusic
+) {
+
+    musicButton.addEventListener(
+        "click",
+        function () {
+
+
+            if (
+                backgroundMusic.paused
+            ) {
+
+
+                backgroundMusic
+                    .play()
+                    .then(
+                        function () {
+
+
+                            musicButton.classList.add(
+                                "playing"
+                            );
+
+
+                            if (musicIcon) {
+
+                                musicIcon.innerHTML =
+                                    "♫";
+
+                            }
+
+                        }
+                    )
+                    .catch(
+                        function () {
+
+                            console.log(
+                                "Unable to play music."
+                            );
+
+                        }
+                    );
+
+
+            } else {
+
+
+                backgroundMusic.pause();
+
+
+                musicButton.classList.remove(
+                    "playing"
+                );
+
+
+                if (musicIcon) {
+
+                    musicIcon.innerHTML =
+                        "♪";
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NAVIGATION CLICK
+========================================================= */
+
+navItems.forEach(
+    function (item) {
+
+
+        item.addEventListener(
+            "click",
+            function () {
+
+
+                navItems.forEach(
+                    function (nav) {
+
+                        nav.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                item.classList.add(
+                    "active"
+                );
+
+
+            }
+        );
+
+
+    }
+);
+
+
+/* =========================================================
+   ACTIVE SECTION DETECTION
+========================================================= */
+
+function initialiseNavigationObserver() {
+
+
+    const sections =
+        document.querySelectorAll(
+            "#walimatulurus, #majlis, #countdown, #rsvp, #tetamu, #terima-kasih"
+        );
+
+
+    if (
+        !sections.length
+    ) {
+
+        return;
+
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+
+                entries.forEach(
+                    function (entry) {
+
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+
+                            const id =
+                                entry.target.id;
+
+
+                            navItems.forEach(
+                                function (item) {
+
+
+                                    item.classList.toggle(
+
+                                        "active",
+
+                                        item.getAttribute(
+                                            "href"
+                                        ) ===
+                                        "#" + id
+
+                                    );
+
+
+                                }
+                            );
+
+
+                        }
+
+                    }
+                );
+
+
+            },
+            {
+
+                threshold: 0.35
+
+            }
+        );
+
+
+    sections.forEach(
+        function (section) {
+
+            observer.observe(
+                section
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+const weddingDate =
+    new Date(
+        "October 18, 2026 11:00:00"
+    ).getTime();
+
+
+function updateCountdown() {
+
+
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    if (
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+    ) {
+
+        return;
+
+    }
+
+
+    const now =
+        new Date().getTime();
+
+
+    const distance =
+        weddingDate - now;
+
+
+    if (
+        distance <= 0
+    ) {
+
+
+        daysElement.innerHTML =
+            "00";
+
+
+        hoursElement.innerHTML =
+            "00";
+
+
+        minutesElement.innerHTML =
+            "00";
+
+
+        secondsElement.innerHTML =
+            "00";
+
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            ) /
+            1000
+        );
+
+
+    daysElement.innerHTML =
+        days;
+
+
+    hoursElement.innerHTML =
+        hours
+            .toString()
+            .padStart(
+                2,
+                "0"
+            );
+
+
+    minutesElement.innerHTML =
+        minutes
+            .toString()
+            .padStart(
+                2,
+                "0"
+            );
+
+
+    secondsElement.innerHTML =
+        seconds
+            .toString()
+            .padStart(
+                2,
+                "0"
+            );
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================================================
+   COPY ACCOUNT
+========================================================= */
+
+function copyAccount() {
+
+
+    const accountNumber =
+        "164687074021";
+
+
+    const button =
+        document.querySelector(
+            ".copy-account"
+        );
+
+
+    if (!button) {
+
+        return;
+
+    }
+
+
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+
+
+        navigator.clipboard
+            .writeText(
+                accountNumber
+            )
+            .then(
+                function () {
+
+                    showCopySuccess(
+                        button
+                    );
+
+                }
+            )
+            .catch(
+                function () {
+
+                    fallbackCopy(
+                        accountNumber,
+                        button
+                    );
+
+                }
+            );
+
+
+        return;
+
+    }
+
+
+    fallbackCopy(
+        accountNumber,
+        button
+    );
+
+}
+
+
+function showCopySuccess(
+    button
+) {
+
+
+    button.innerText =
+        "NOMBOR AKAUN DISALIN ✓";
+
+
+    setTimeout(
+        function () {
+
+            button.innerText =
+                "SALIN NOMBOR AKAUN";
+
+        },
+        2000
+    );
+
+}
+
+
+function fallbackCopy(
+    text,
+    button
+) {
+
+
+    const textarea =
+        document.createElement(
+            "textarea"
+        );
+
+
+    textarea.value =
+        text;
+
+
+    textarea.style.position =
+        "fixed";
+
+
+    textarea.style.opacity =
+        "0";
+
+
+    document.body.appendChild(
+        textarea
+    );
+
+
+    textarea.select();
+
+
+    try {
+
+
+        document.execCommand(
+            "copy"
+        );
+
+
+        showCopySuccess(
+            button
+        );
+
+
+    } catch (error) {
+
+
+        console.log(
+            "Copy failed.",
+            error
+        );
+
+
+    }
+
+
+    document.body.removeChild(
+        textarea
+    );
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function initialiseRevealAnimations() {
+
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal-on-scroll"
+        );
+
+
+    if (
+        !revealElements.length
+    ) {
+
+        return;
+
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+
+            function (entries) {
+
+
+                entries.forEach(
+                    function (entry) {
+
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+
+                            entry.target.classList.add(
+                                "active"
+                            );
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+
+                        }
+
+                    }
+                );
+
+
+            },
+
+            {
+
+                threshold: 0.12
+
+            }
+
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            observer.observe(
+                element
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   WORD ANIMATION
+========================================================= */
+
+function animateWords() {
+
+
+    const elements =
+        document.querySelectorAll(
+            ".section-title, .closing-title"
+        );
+
+
+    elements.forEach(
+        function (element) {
+
+
+            if (
+                element.dataset.wordsAnimated ===
+                "true"
+            ) {
+
+                return;
+
+            }
+
+
+            element.dataset.wordsAnimated =
+                "true";
+
+
+            const text =
+                element.textContent.trim();
+
+
+            if (!text) {
+
+                return;
+
+            }
+
+
+            const words =
+                text.split(/\s+/);
+
+
+            element.innerHTML =
+                "";
+
+
+            words.forEach(
+                function (
+                    word,
+                    index
+                ) {
+
+
+                    const span =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    span.classList.add(
+                        "word"
+                    );
+
+
+                    span.textContent =
+                        word;
+
+
+                    span.style.animationDelay =
+                        (
+                            index * 0.12
+                        ) + "s";
+
+
+                    element.appendChild(
+                        span
+                    );
+
+
+                    if (
+                        index <
+                        words.length - 1
+                    ) {
+
+
+                        element.appendChild(
+
+                            document.createTextNode(
+                                " "
+                            )
+
+                        );
+
+
+                    }
+
+                }
+            );
+
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   INFINITE FALLING LEAVES
+========================================================= */
+
+function createFallingLeaf() {
+
+
+    const container =
+        document.getElementById(
+            "fallingLeaves"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    const leaf =
+        document.createElement(
+            "div"
+        );
+
+
+    leaf.classList.add(
+        "falling-leaf"
+    );
+
+
+    /* Starting X */
+
+    const startX =
+        Math.random() * 100;
+
+
+    /* Random movement */
+
+    const driftA =
+        (
+            Math.random() * 140
+        ) - 70;
+
+
+    const driftB =
+        (
+            Math.random() * 180
+        ) - 90;
+
+
+    const driftC =
+        (
+            Math.random() * 180
+        ) - 90;
+
+
+    const driftD =
+        (
+            Math.random() * 220
+        ) - 110;
+
+
+    /* Falling speed */
+
+    const duration =
+        9 +
+        Math.random() * 9;
+
+
+    /* Size */
+
+    const size =
+        10 +
+        Math.random() * 13;
+
+
+    /* Opacity */
+
+    const opacity =
+        0.16 +
+        Math.random() * 0.25;
+
+
+    /* CSS variables */
+
+    leaf.style.setProperty(
+        "--start-x",
+        startX + "vw"
+    );
+
+
+    leaf.style.setProperty(
+        "--drift-a",
+        driftA + "px"
+    );
+
+
+    leaf.style.setProperty(
+        "--drift-b",
+        driftB + "px"
+    );
+
+
+    leaf.style.setProperty(
+        "--drift-c",
+        driftC + "px"
+    );
+
+
+    leaf.style.setProperty(
+        "--drift-d",
+        driftD + "px"
+    );
+
+
+    leaf.style.setProperty(
+        "--leaf-opacity",
+        opacity
+    );
+
+
+    leaf.style.width =
+        size + "px";
+
+
+    leaf.style.height =
+        (
+            size * 1.6
+        ) + "px";
+
+
+    leaf.style.animationDuration =
+        duration + "s";
+
+
+    /* Add */
+
+    container.appendChild(
+        leaf
+    );
+
+
+    /* Start */
+
+    requestAnimationFrame(
+        function () {
+
+            leaf.classList.add(
+                "animate"
+            );
+
+        }
+    );
+
+
+    /* Remove */
+
+    setTimeout(
+        function () {
+
+            if (
+                leaf.parentNode
+            ) {
+
+                leaf.remove();
+
+            }
+
+        },
+        (
+            duration * 1000
+        ) + 1000
+    );
+
+}
+
+
+/* =========================================================
+   START FALLING LEAVES
+========================================================= */
+
+function startFallingLeaves() {
+
+
+    /* Initial leaves */
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+
+        setTimeout(
+            function () {
+
+                createFallingLeaf();
+
+            },
+            i * 450
+        );
+
+
+    }
+
+
+    /* New leaf forever */
+
+    setInterval(
+        function () {
+
+            createFallingLeaf();
+
+        },
+        850
+    );
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+initialiseNavigationObserver();
+
+startFallingLeaves();
+
+</script>
 
 
 </body>
