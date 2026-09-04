@@ -1429,22 +1429,14 @@ section {
 ========================================================= */
 
 .closing-section {
-
-    padding:
-        60px 20px 28px;
-
+    padding: 60px 20px 110px;
     text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(215,233,242,0.97),
-            rgba(234,245,249,0.97)
-        ),
-        url("image/background.jpg");
-
+    background: linear-gradient(
+        135deg,
+        rgba(215, 233, 242, 0.97),
+        rgba(234, 245, 249, 0.97)
+    ), url("image/background.jpg");
     background-size: cover;
-
     background-position: center;
 }
 
@@ -2375,11 +2367,9 @@ section {
     }
 
 
-    .closing-section {
-
-        padding:
-            48px 18px 22px;
-    }
+.closing-section {
+    padding: 48px 18px 100px;
+}
 
 
     .closing-doa {
@@ -3076,8 +3066,9 @@ section {
 
                 <!-- TANDA KASIH -->
 
-                <details
-                    class="info-accordion reveal-on-scroll">
+<details
+    class="info-accordion reveal-on-scroll">
+
 
 
                     <summary>
@@ -3161,8 +3152,9 @@ section {
 
                 <!-- HUBUNGI KAMI -->
 
-                <details
-                    class="info-accordion reveal-on-scroll">
+<details
+    class="info-accordion reveal-on-scroll"
+    id="hubungi">
 
 
                     <summary>
@@ -3402,101 +3394,59 @@ section {
     ===================================================== -->
 
     <nav
-        class="floating-nav"
-        id="floatingNav">
+    class="floating-nav"
+    id="floatingNav">
+
+    <a
+        href="#majlis"
+        class="nav-item">
+
+        <span class="nav-icon">✦</span>
+        <span class="nav-label">Majlis</span>
+
+    </a>
 
 
-        <a
-            href="#walimatulurus"
-            class="nav-item active">
+    <a
+        href="#countdown"
+        class="nav-item">
 
-            <span class="nav-icon">
-                ❧
-            </span>
+        <span class="nav-icon">◷</span>
+        <span class="nav-label">Detik</span>
 
-            <span class="nav-label">
-                Walimatulurus
-            </span>
-
-        </a>
+    </a>
 
 
-        <a
-            href="#majlis"
-            class="nav-item">
+    <a
+        href="#rsvp"
+        class="nav-item">
 
-            <span class="nav-icon">
-                ✦
-            </span>
+        <span class="nav-icon">✓</span>
+        <span class="nav-label">RSVP</span>
 
-            <span class="nav-label">
-                Majlis
-            </span>
-
-        </a>
+    </a>
 
 
-        <a
-            href="#countdown"
-            class="nav-item">
+    <a
+        href="#hubungi"
+        class="nav-item">
 
-            <span class="nav-icon">
-                ◷
-            </span>
+        <span class="nav-icon">☎</span>
+        <span class="nav-label">Hubungi</span>
 
-            <span class="nav-label">
-                Detik
-            </span>
-
-        </a>
+    </a>
 
 
-        <a
-            href="#rsvp"
-            class="nav-item">
+    <a
+        href="#terima-kasih"
+        class="nav-item">
 
-            <span class="nav-icon">
-                ✓
-            </span>
+        <span class="nav-icon">♡</span>
+        <span class="nav-label">Closing</span>
 
-            <span class="nav-label">
-                RSVP
-            </span>
+    </a>
 
-        </a>
-
-
-        <a
-            href="#tetamu"
-            class="nav-item">
-
-            <span class="nav-icon">
-                ♡
-            </span>
-
-            <span class="nav-label">
-                Tetamu
-            </span>
-
-        </a>
-
-
-        <a
-            href="#terima-kasih"
-            class="nav-item">
-
-            <span class="nav-icon">
-                ☎
-            </span>
-
-            <span class="nav-label">
-                Hubungi
-            </span>
-
-        </a>
-
-
-    </nav>
+</nav>
 
 
     <!-- =====================================================
@@ -3760,39 +3710,63 @@ if (
 
 /* =========================================================
    NAVIGATION CLICK
+   Smoothly scroll selected section to the middle
 ========================================================= */
 
-navItems.forEach(
-    function (item) {
+navItems.forEach(function (item) {
+
+    item.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        const targetId = item.getAttribute("href");
+        const target = document.querySelector(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        navItems.forEach(function (nav) {
+            nav.classList.remove("active");
+        });
+
+        item.classList.add("active");
 
 
-        item.addEventListener(
-            "click",
-            function () {
+        /* Open HUBUNGI KAMI accordion */
+        if (targetId === "#hubungi") {
 
+            const hubungi =
+                document.getElementById("hubungi");
 
-                navItems.forEach(
-                    function (nav) {
-
-                        nav.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                item.classList.add(
-                    "active"
-                );
-
-
+            if (hubungi) {
+                hubungi.open = true;
             }
-        );
+        }
 
 
-    }
-);
+        /* Scroll section toward center */
+        setTimeout(function () {
+
+            const rect =
+                target.getBoundingClientRect();
+
+            const targetPosition =
+                window.scrollY +
+                rect.top -
+                (window.innerHeight / 2) +
+                (rect.height / 2);
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+        }, 100);
+
+    });
+
+});
 
 
 /* =========================================================
@@ -3801,16 +3775,13 @@ navItems.forEach(
 
 function initialiseNavigationObserver() {
 
-
     const sections =
         document.querySelectorAll(
-            "#walimatulurus, #majlis, #countdown, #rsvp, #tetamu, #terima-kasih"
+            "#majlis, #countdown, #rsvp, #hubungi"
         );
 
 
-    if (
-        !sections.length
-    ) {
+    if (!sections.length) {
 
         return;
 
@@ -3819,17 +3790,15 @@ function initialiseNavigationObserver() {
 
     const observer =
         new IntersectionObserver(
-            function (entries) {
 
+            function (entries) {
 
                 entries.forEach(
                     function (entry) {
 
-
                         if (
                             entry.isIntersecting
                         ) {
-
 
                             const id =
                                 entry.target.id;
@@ -3837,7 +3806,6 @@ function initialiseNavigationObserver() {
 
                             navItems.forEach(
                                 function (item) {
-
 
                                     item.classList.toggle(
 
@@ -3850,23 +3818,20 @@ function initialiseNavigationObserver() {
 
                                     );
 
-
                                 }
                             );
-
 
                         }
 
                     }
                 );
 
-
             },
+
             {
-
                 threshold: 0.35
-
             }
+
         );
 
 
