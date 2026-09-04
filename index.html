@@ -1633,87 +1633,49 @@ section {
 }
 
 
-/* =========================================================
+/* =========================
    MUSIC BUTTON
-========================================================= */
-
+========================= */
 .music-button {
-
     position: fixed;
-
-    width: 50px;
-
-    height: 50px;
-
-    bottom: 22px;
-
-    right: 22px;
-
+    right: 18px;
+    bottom: 92px;
+    width: 52px;
+    height: 52px;
+    border: none;
     border-radius: 50%;
-
-    border:
-        1px solid
-        rgba(22,58,99,0.18);
-
-    background:
-        rgba(255,255,255,0.92);
-
-    color:
-        var(--navy);
-
-    cursor: pointer;
-
-    z-index: 1200;
-
-    display: none;
-
-    justify-content: center;
-
-    align-items: center;
-
-    box-shadow:
-        0 6px 22px
-        rgba(22,58,99,0.13);
-}
-
-
-.music-button.show {
-
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--navy);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1200;
+    box-shadow: 0 5px 18px rgba(13, 41, 72, 0.15);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-
-.music-button.playing {
-
-    animation:
-        musicPulse 2s infinite;
+.music-button:hover {
+    transform: scale(1.06);
 }
-
 
 .music-icon {
-
-    font-size: 19px;
+    font-size: 20px;
+    line-height: 1;
 }
 
-
-@keyframes musicPulse {
-
-    0% {
-
-        transform:
-            scale(1);
+@media (max-width: 768px) {
+    .music-button {
+        right: 14px;
+        bottom: 88px;
+        width: 48px;
+        height: 48px;
     }
 
-    50% {
-
-        transform:
-            scale(1.07);
-    }
-
-    100% {
-
-        transform:
-            scale(1);
+    .music-icon {
+        font-size: 18px;
     }
 }
 
@@ -2496,6 +2458,35 @@ section {
 
         transform:
             none;
+    }
+}
+
+    /* =========================================================
+   FINAL MUSIC BUTTON POSITION
+   Keep music button completely separate from bottom nav
+========================================================= */
+
+.music-button {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 95px !important;
+    top: auto !important;
+
+    width: 50px !important;
+    height: 50px !important;
+
+    border-radius: 50% !important;
+    z-index: 2000 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .music-button {
+        right: 14px !important;
+        bottom: 82px !important;
+
+        width: 46px !important;
+        height: 46px !important;
     }
 }
 
