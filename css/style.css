@@ -196,25 +196,24 @@ section {
 ========================================================= */
 
 .welcome-screen {
-
     width: 100%;
-
-    min-height: 100vh;
+    height: 100vh;
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
-
     position: relative;
-
     z-index: 2;
 
-    padding:
-        45px 20px;
+    padding: 45px 20px;
+
+    overflow: hidden;
+    overscroll-behavior: none;
 
     background:
         linear-gradient(
@@ -224,7 +223,6 @@ section {
         url("image/background.jpg");
 
     background-size: cover;
-
     background-position: center;
 }
 
@@ -2759,4 +2757,20 @@ section {
     .seal-monogram {
         font-size: 20px;
     }
+}
+
+/* =========================================================
+   LOCK FRONT COVER
+   Prevent scrolling before invitation is opened
+========================================================= */
+
+body.welcome-locked {
+    overflow: hidden !important;
+    height: 100vh;
+    height: 100svh;
+    overscroll-behavior: none;
+}
+
+body.welcome-locked .welcome-screen {
+    touch-action: none;
 }
