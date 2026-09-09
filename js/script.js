@@ -69,7 +69,8 @@ if (openButton) {
                         "fade-out"
                     );
 
-
+                     document.body.classList.remove("welcome-locked");
+                   
                     setTimeout(function () {
                         welcomeScreen.style.display =
                             "none";
