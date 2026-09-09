@@ -1,6 +1,7 @@
 /* =========================================================
    ELEMENTS
 ========================================================= */
+document.body.classList.add("welcome-locked");
 
 const openButton =
     document.getElementById("openInvitation");
