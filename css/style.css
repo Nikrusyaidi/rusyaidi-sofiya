@@ -1957,3 +1957,173 @@ body.welcome-locked {
         height: min(82vw, 300px);
     }
 }
+
+/* =========================================================
+   FRONT PAGE WIND PARTICLES
+   Subtle particles blowing from right to left
+========================================================= */
+
+.wind-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 1;
+}
+
+    .wind-particles span {
+        position: absolute;
+        right: -10px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #163a63;
+        box-shadow: 0 0 8px rgba(22, 58, 99, 0.45);
+        animation: windParticle 5s linear infinite;
+        display: block;
+    }
+
+
+        /* Different positions / speeds */
+
+        .wind-particles span:nth-child(1) {
+            top: 14%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 6.5s;
+            animation-delay: -1s;
+        }
+
+        .wind-particles span:nth-child(2) {
+            top: 22%;
+            width: 5px;
+            height: 5px;
+            animation-duration: 8.5s;
+            animation-delay: -4s;
+        }
+
+        .wind-particles span:nth-child(3) {
+            top: 31%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 7.2s;
+            animation-delay: -2.5s;
+        }
+
+        .wind-particles span:nth-child(4) {
+            top: 40%;
+            width: 4px;
+            height: 4px;
+            animation-duration: 9s;
+            animation-delay: -5s;
+        }
+
+        .wind-particles span:nth-child(5) {
+            top: 49%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 6.8s;
+            animation-delay: -3s;
+        }
+
+        .wind-particles span:nth-child(6) {
+            top: 58%;
+            width: 5px;
+            height: 5px;
+            animation-duration: 8.2s;
+            animation-delay: -6s;
+        }
+
+        .wind-particles span:nth-child(7) {
+            top: 67%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 7.6s;
+            animation-delay: -1.8s;
+        }
+
+        .wind-particles span:nth-child(8) {
+            top: 76%;
+            width: 4px;
+            height: 4px;
+            animation-duration: 9.2s;
+            animation-delay: -4.5s;
+        }
+
+        .wind-particles span:nth-child(9) {
+            top: 84%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 7s;
+            animation-delay: -2s;
+        }
+
+        .wind-particles span:nth-child(10) {
+            top: 91%;
+            width: 5px;
+            height: 5px;
+            animation-duration: 8.8s;
+            animation-delay: -5.5s;
+        }
+        .wind-particles span:nth-child(odd) {
+            border-radius: 50%;
+        }
+
+        .wind-particles span:nth-child(even) {
+            width: 3px;
+            height: 3px;
+            background: rgba(184, 154, 98, 0.38);
+        }
+
+/* Main movement */
+
+@keyframes windParticle {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.6);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate3d(-25vw, -10px, 0) scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate3d(-55vw, 12px, 0) scale(1.1);
+        opacity: 0.8;
+    }
+
+    75% {
+        transform: translate3d(-85vw, -8px, 0) scale(0.8);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate3d(-125vw, 10px, 0) scale(0.4);
+        opacity: 0;
+    }
+}
+
+
+/* Fade particles when the door opens */
+
+.welcome-screen.door-opening .wind-particles {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .wind-particles span {
+        animation-duration: 6.5s;
+    }
+}
