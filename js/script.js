@@ -324,7 +324,7 @@ function initialiseNavigationObserver() {
 
     const sections =
         document.querySelectorAll(
-            "#majlis, #countdown, #rsvp, #hubungi"
+            "#majlis, #countdown, #rsvp, #hubungi, #pesanan-tetamu, #terima-kasih"
         );
 
 
