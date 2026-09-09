@@ -1869,10 +1869,13 @@ body.welcome-locked {
 .guest-photo-frame {
     position: relative;
     width: min(100%, 300px);
+    aspect-ratio: 1 / 1;
     padding: 14px;
     background: rgba(255,255,255,0.55);
     border: 1px solid rgba(184,154,98,0.45);
+    border-radius: 50%;
     box-shadow: 0 12px 30px rgba(22,58,99,0.10);
+    overflow: visible;
 }
 
 
@@ -1881,9 +1884,11 @@ body.welcome-locked {
 .guest-photo {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 5;
+    height: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border: 1px solid rgba(22,58,99,0.10);
+    border-radius: 50%;
 }
 
 
