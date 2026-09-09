@@ -363,12 +363,14 @@ section {
     color: var(--navy);
 
     font-family:
-        'Montserrat',
-        sans-serif;
+    'Cormorant Garamond',
+    serif;
 
-    font-size: 9px;
+font-size: 16px;
 
-    letter-spacing: 3px;
+font-weight: 600;
+
+letter-spacing: 4px;
 
     cursor: pointer;
 
